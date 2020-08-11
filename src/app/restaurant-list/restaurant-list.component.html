@@ -14,7 +14,7 @@
   </mat-sidenav-container>
 <!-- </app-layout> -->
 
-<h2>My Restaurants</h2>
+<h2></h2>
 <!-- <mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
@@ -102,102 +102,6 @@
   </mat-card>
 </div> -->
 
-<div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px grid" fxLayoutAlign="flex-start">
-  <ng-container *ngFor="let restaurant of restaurants$ | async">
-    <app-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
-      <mat-card>
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{ restaurant.id }}</mat-card-title>
-          <mat-card-subtitle>{{ restaurant.name }}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <li>{{ restaurant.address }}</li>
-          <li>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-          </li>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button><i class="fa fa-heart"></i></button>
-          <button mat-button><i class="fa fa-hand-rock-o"></i></button>
-        </mat-card-actions>
-      </mat-card>      
-    </app-card>
-    <app-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
-      <mat-card>
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{ restaurant.id }}</mat-card-title>
-          <mat-card-subtitle>{{ restaurant.name }}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <li>{{ restaurant.address }}</li>
-          <li>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-          </li>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button><i class="fa fa-heart"></i></button>
-          <button mat-button><i class="fa fa-hand-rock-o"></i></button>
-        </mat-card-actions>
-      </mat-card>      
-    </app-card>
-    <app-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
-      <mat-card>
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{ restaurant.id }}</mat-card-title>
-          <mat-card-subtitle>{{ restaurant.name }}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <li>{{ restaurant.address }}</li>
-          <li>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-          </li>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button><i class="fa fa-heart"></i></button>
-          <button mat-button><i class="fa fa-hand-rock-o"></i></button>
-        </mat-card-actions>
-      </mat-card>      
-    </app-card>
-    <app-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
-      <mat-card>
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{ restaurant.id }}</mat-card-title>
-          <mat-card-subtitle>{{ restaurant.name }}</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content>
-          <li>{{ restaurant.address }}</li>
-          <li>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star"></span>
-            <span class="fa fa-star"></span>
-          </li>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button><i class="fa fa-heart"></i></button>
-          <button mat-button><i class="fa fa-hand-rock-o"></i></button>
-        </mat-card-actions>
-      </mat-card>      
-    </app-card>    
-  </ng-container>
-</div>
 
 <!-- <style>
  .cardList {
@@ -245,3 +149,238 @@
   </ng-container>
 </div> -->
 
+
+
+<!-- <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px grid" fxLayoutAlign="flex-start">
+  <ng-container *ngFor="let restaurant of restaurants$ | async">
+    <app-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{ restaurant.id }}</mat-card-title>
+          <mat-card-subtitle>{{ restaurant.name }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <li>{{ restaurant.address }}</li>
+          <li>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </li>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button><i class="fa fa-heart"></i></button>
+          <button mat-button><i class="fa fa-arrow-right"></i></button>
+          <button mat-button><i class="fa fa-pencil-square-o"></i></button>
+        </mat-card-actions>
+      </mat-card>      
+    </app-card>  
+  </ng-container>
+</div> -->
+
+<body>
+<div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px grid" fxLayoutAlign="flex-start">
+  <ng-container>
+    <app-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>Peblo</mat-card-title>
+          <mat-card-subtitle>Ambalangoda</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://cdn.pixabay.com/photo/2014/12/27/14/37/living-room-581073_960_720.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span> 105 Reviews</span>
+            <span> Top Dish: Kottu</span>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button><i class="fa fa-heart"></i></button>
+          <button mat-button><i class="fa fa-arrow-right"></i></button>
+          <button mat-button><i class="fa fa-pencil-square-o"></i></button>
+        </mat-card-actions>
+      </mat-card>      
+    </app-card>  
+    <app-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image1"></div>
+          <mat-card-title>Sithru</mat-card-title>
+          <mat-card-subtitle>Galle</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://cdn.pixabay.com/photo/2020/08/01/10/04/alpine-5455013_960_720.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button><i class="fa fa-heart"></i></button>
+          <button mat-button><i class="fa fa-arrow-right"></i></button>
+          <button mat-button><i class="fa fa-pencil-square-o"></i></button>
+        </mat-card-actions>
+      </mat-card>      
+    </app-card>     
+    <app-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image2"></div>
+          <mat-card-title>Red D</mat-card-title>
+          <mat-card-subtitle>Hikkaduwa</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://cdn.pixabay.com/photo/2020/07/23/07/10/market-5430564_960_720.jpg" alt="Photo of a Shiba Inu">        
+        <mat-card-content>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button><i class="fa fa-heart"></i></button>
+          <button mat-button><i class="fa fa-arrow-right"></i></button>
+          <button mat-button><i class="fa fa-pencil-square-o"></i></button>
+        </mat-card-actions>
+      </mat-card>      
+    </app-card>  
+    <app-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
+      <mat-card>
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image3"></div>
+          <mat-card-title>Blue Fox</mat-card-title>
+          <mat-card-subtitle>Hikkaduwa</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image src="https://cdn.pixabay.com/photo/2020/07/03/16/42/amsterdam-5367020_960_720.jpg" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button><i class="fa fa-heart"></i></button>
+          <button mat-button><i class="fa fa-arrow-right"></i></button>
+          <button mat-button><i class="fa fa-pencil-square-o"></i></button>
+        </mat-card-actions>
+      </mat-card>      
+    </app-card>   
+  </ng-container>
+</div>
+</body>
+
+<!-- <body>
+  <div class="bounds">    
+    <div class="content" 
+     fxLayout="row wrap" 
+     fxLayout.xs="column" 
+     fxLayoutGap="32px grid"
+     fxLayoutAlign="start start"> 
+      <app-card 
+        fxFlex="<flex-grow>"
+        fxFlex.lt-md="0 1 calc(50% - 32px)"
+        fxFlex.lt-sm="100%"
+        class="sec1">
+      </app-card>
+      <app-card 
+        fxFlex="<flex-grow>"
+        fxFlex.lt-md="0 1 calc(50% - 32px)"
+        fxFlex.lt-sm="100%"
+        class="sec2">
+      </app-card>  
+      <app-card 
+        fxFlex="<flex-grow>"
+        fxFlex.lt-md="0 1 calc(50% - 32px)"
+        fxFlex.lt-sm="100%"
+        class="sec3">
+      </app-card>
+      <app-card 
+        fxFlex="<flex-grow>"
+        fxFlex.lt-md="0 1 calc(50% - 32px)"
+        fxFlex.lt-sm="100%"
+        class="sec2">
+      </app-card>
+      <app-card 
+        fxFlex="<flex-grow>"
+        fxFlex.lt-md="0 1 calc(50% - 32px)"
+        fxFlex.lt-sm="100%"
+        class="sec1">
+      </app-card>     
+    </div>  
+  </div>
+</body>
+ -->
+
+<!-- <div class="container">
+    
+    <h2>Normal</h2>
+    <div class="flex-container" fxLayout="row">
+      <div class="child-1">1. One</div> 
+      <div class="child-2">2. Two</div> 
+      <div class="child-3">3. Three</div>
+    </div>
+
+    <h2>Default</h2>
+    <div class="flex-container" fxLayout="row">
+      <div class="child-1" fxFlex>1. One</div> 
+      <div class="child-2" fxFlex>2. Two</div> 
+      <div class="child-3" fxFlex>3. Three</div>
+    </div>
+
+    <h2>fxFlex with grow shrink values</h2>
+    <div class="flex-container" fxLayout="row">
+      <div class="child-1" fxFlex="1 1 0">1. One</div> 
+      <div class="child-2" fxFlex>2. Two</div> 
+      <div class="child-3" fxFlex>3. Three</div>
+    </div>
+
+    <h2>fxFlex new</h2>
+    <div class="flex-container" fxLayout="row">
+        <div class="child-1" fxFlex="1 1 0">
+          Angular fxFlex flexgrow flexshrink flexbasis </div>
+        <div class="child-2" fxFlex="1 1 0">
+          Angular fxFlex flexgrow flexshrink flexbasis </div>
+    </div>
+
+</div> -->
+
+
+
+<!--   <body>
+    <div class="bounds">    
+      <div class="content" 
+           fxLayout="row wrap" 
+           fxLayout.xs="column" 
+           fxLayoutGap="32px grid">
+           
+          <div fxFlex="0 1 calc(33.3% - 10px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%" class="sec1">
+              first-section
+          </div>
+          <div fxFlex="0 1 calc(33.3% - 10px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%"  class="sec2">
+              second-section
+          </div>
+          <div fxFlex="0 1 calc(33.3% - 10px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%"  class="sec3">
+              third-section
+          </div>
+          <div fxFlex="0 1 calc(33.3% - 10px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%"  class="sec1">
+              first-section
+          </div>
+          <div fxFlex="0 1 calc(33.3% - 10px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%"  class="sec2">
+              second-section
+          </div>
+          <div fxFlex="0 1 calc(33.3% - 10px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%"  class="sec3">
+              third-section
+          </div>
+          
+      </div>
+      
+    </div>
+  </body> -->
