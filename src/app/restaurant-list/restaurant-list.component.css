@@ -3,12 +3,12 @@
 }
 
 .example-header-image {
-  background-image: url('https://cdn.pixabay.com/photo/2014/12/27/14/37/living-room-581073_960_720.jpg');
+  background-image: url('https://cdn.pixabay.com/photo/2019/09/23/16/39/square-4499056_960_720.jpg');
   background-size: cover;
 }
 
 .example-header-image1 {
-  background-image: url('https://cdn.pixabay.com/photo/2020/08/01/10/04/alpine-5455013_960_720.jpg');
+  background-image: url('https://cdn.pixabay.com/photo/2020/08/05/19/07/pedestrian-bridge-5466182_960_720.jpg');
   background-size: cover;
 }
 
@@ -92,3 +92,19 @@ html, body {
      width:500px;
      border:2px solid red;
 }
+
+.div.sbt{
+ display: inline-block;
+}
+
+div button{
+    display:inline-block;
+    white-space:normal;    
+}
+
+
+.navBardemoBasicUsage md-content .ext-content {
+  padding: 50px;
+  margin: 20px;
+  background-color: #FFF2E0; }
+
