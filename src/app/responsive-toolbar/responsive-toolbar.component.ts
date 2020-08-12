@@ -10,29 +10,30 @@ export class ResponsiveToolbarComponent implements OnInit {
   
   menuItems: MenuItem[] = [
     {
-      label: 'Sign Up',
-      icon: 'login'
-    },
-    {
-      label: 'About',
-      icon: 'help'
-    },
-    {
-      label: 'Pricing',
-      icon: 'attach_money'
-    },
-    {
-      label: 'Docs',
-      icon: 'notes'
+      label: 'Blog',
+      icon: 'rss_feed'
     },
     {
       label: 'Showcase',
       icon: 'slideshow'
     },
     {
-      label: 'Blog',
-      icon: 'rss_feed'
+      label: 'Docs',
+      icon: 'notes'
     },
+    {
+      label: 'Pricing',
+      icon: 'attach_money'
+    },
+    {
+      label: 'About',
+      icon: 'help'
+    },
+    {
+      label: 'Sign Up',
+      icon: 'login'
+    },
+
 
   
   ];
