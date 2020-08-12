@@ -13,11 +13,16 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { NavbarModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
+import { ResponsiveToolbarComponent } from './responsive-toolbar/responsive-toolbar.component';
+import { MatIconModule } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RestaurantListComponent
+    RestaurantListComponent,
+    ResponsiveToolbarComponent
   ],
   imports: [
     BrowserModule,
@@ -31,6 +36,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     MatButtonModule,
     MatSidenavModule,
     MatToolbarModule,
+    NavbarModule,
+    WavesModule,
+    ButtonsModule,
+    MatIconModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
