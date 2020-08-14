@@ -17,12 +17,18 @@ import { NavbarModule, WavesModule, ButtonsModule } from 'angular-bootstrap-md';
 import { ResponsiveToolbarComponent } from './responsive-toolbar/responsive-toolbar.component';
 import { MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { RegisterRestaurantComponent } from './register-restaurant/register-restaurant.component';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatInputModule } from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
     AppComponent,
     RestaurantListComponent,
-    ResponsiveToolbarComponent
+    ResponsiveToolbarComponent,
+    RegisterRestaurantComponent
   ],
   imports: [
     BrowserModule,
@@ -41,6 +47,11 @@ import { MatMenuModule } from '@angular/material/menu';
     ButtonsModule,
     MatIconModule,
     MatMenuModule,
+    MDBBootstrapModule.forRoot(),
+    MDBBootstrapModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
