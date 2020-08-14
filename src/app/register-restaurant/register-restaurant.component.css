@@ -1,0 +1,26 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.mat-form-field-empty.mat-form-field-label {
+    color: green;
+}
+
+/* Border */
+/*.mat-form-field-appearance-outline .mat-form-field-outline {
+  color: green;
+}*/
+
+/*input.mat-input-element {
+  color: green;
+}*/
+
+mat-label {
+  color: gray;	
+}

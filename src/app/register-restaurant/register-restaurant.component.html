@@ -1,0 +1,64 @@
+<style>
+
+
+/*.clsmain {
+  background-color: lightblue;
+}
+*/
+mat-label {
+  color: gray;	
+}
+
+mat-option-value {
+  color: gray;	
+}
+
+mat-select-value {
+  color: gray;	
+}
+
+</style>
+
+<div class="clsmain">
+	<h1> Regiter restaurant </h1>
+	<form class="create-account-form">
+		<mat-form-field>
+    		<mat-label class="clslbl">Business name</mat-label>
+    		<input matInput >			
+		</mat-form-field>
+		<br>
+		<mat-form-field>
+    		<mat-label>Phone number</mat-label>
+    		<input matInput >			
+		</mat-form-field>	
+		<br>	
+		<mat-form-field>
+    		<mat-label>Website</mat-label>
+    		<input matInput >			
+		</mat-form-field>
+		<br>
+		<mat-form-field>
+    		<mat-label>Email</mat-label>
+    		<input matInput >			
+		</mat-form-field>
+		<br>
+		<mat-form-field>
+    		<mat-label>City/Town, Province</mat-label>
+    		<input matInput >			
+		</mat-form-field>
+		<br>
+		<mat-form-field>
+    		<mat-label>Address</mat-label>
+    		<input matInput >			
+		</mat-form-field>		
+		<br>
+		<mat-form-field appearance="fill">
+		  <mat-label>What is your role</mat-label>
+		  <mat-select [(value)]="selected">
+		    <mat-option value="Customer">Customer</mat-option>		  	
+		    <mat-option value="Restaurant Owner">Restaurant Owner</mat-option>
+		  </mat-select>
+		</mat-form-field>
+	</form>
+
+</div>
