@@ -3,8 +3,8 @@
 
 /*.clsmain {
   background-color: lightblue;
-}
-*/
+}*/
+
 mat-label {
   color: gray;	
 }
@@ -19,46 +19,55 @@ mat-select-value {
 
 </style>
 
+<!-- <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px grid" fxLayoutAlign="flex-start">
+  <ng-container *ngFor="let restaurant of restaurants$ | async">
+	  <mat-card-title>{{ restaurant.id }}</mat-card-title>
+  </ng-container>
+</div> -->
+
 <div class="clsmain">
-	<h1> Regiter restaurant </h1>
-	<form class="create-account-form">
-		<mat-form-field>
-    		<mat-label class="clslbl">Business name</mat-label>
-    		<input matInput >			
-		</mat-form-field>
-		<br>
-		<mat-form-field>
-    		<mat-label>Phone number</mat-label>
-    		<input matInput >			
-		</mat-form-field>	
-		<br>	
-		<mat-form-field>
-    		<mat-label>Website</mat-label>
-    		<input matInput >			
-		</mat-form-field>
-		<br>
-		<mat-form-field>
-    		<mat-label>Email</mat-label>
-    		<input matInput >			
-		</mat-form-field>
-		<br>
-		<mat-form-field>
-    		<mat-label>City/Town, Province</mat-label>
-    		<input matInput >			
-		</mat-form-field>
-		<br>
-		<mat-form-field>
-    		<mat-label>Address</mat-label>
-    		<input matInput >			
-		</mat-form-field>		
-		<br>
+	<h1> Register restaurant </h1>
+	<form class="create-account-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
 		<mat-form-field appearance="fill">
 		  <mat-label>What is your role</mat-label>
-		  <mat-select [(value)]="selected">
+		  <mat-select name="user_role" [(value)]="selected" #user_role ngModel >
 		    <mat-option value="Customer">Customer</mat-option>		  	
 		    <mat-option value="Restaurant Owner">Restaurant Owner</mat-option>
 		  </mat-select>
 		</mat-form-field>
+		<br>
+		<mat-form-field>
+    		<mat-label class="clslbl">Business name</mat-label>
+    		<input name="rest_name" matInput #rest_name ngModel />			
+		</mat-form-field>
+		<br>
+		<mat-form-field>
+    		<mat-label>Phone number</mat-label>
+    		<input name="rest_pnumber" matInput type="text" #rest_pnumber ngModel/>			
+		</mat-form-field>	
+		<br>	
+		<mat-form-field>
+    		<mat-label>Website</mat-label>
+    		<input name="rest_website" matInput type="text" #rest_website ngModel/>			
+		</mat-form-field>
+		<br>
+		<mat-form-field>
+    		<mat-label>Email</mat-label>
+    		<input name="email" matInput type="text" #rest_email ngModel/>			
+		</mat-form-field>
+		<br>
+		<mat-form-field>
+    		<mat-label>City/Town, Province</mat-label>
+    		<input name="city" matInput type="text" type="text" #rest_city ngModel/>			
+		</mat-form-field>
+		<br>
+		<mat-form-field>
+    		<mat-label>Address</mat-label>
+    		<input  name="rest_address" matInput type="text" #rest_address ngModel />			
+		</mat-form-field>		
+		<br>
+		<button mat-button type="submit">Submit</button>			
+		<br>
 	</form>
 
 </div>
