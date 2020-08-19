@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Restaurant } from './restaurant';
 
 @Injectable({
@@ -16,5 +16,16 @@ export class ApiService {
     return this.http.get<Restaurant[]>(`${this.API_URL}/restaurants/`);
   }
 
+  public register_restaurant(restaurant: Restaurant):Observable<Restaurant>
+  {
+  	console.log(this.http.post<Restaurant>(`${this.API_URL}/restaurants/`, restaurant));
+  	return this.http.post<Restaurant>(`${this.API_URL}/restaurants/`, restaurant);
+  }
+
+  public register_restaurant2(data):Observable<any>
+  {
+    //console.log(this.http.post(`${this.API_URL}/restaurants/`, data));
+    return this.http.post(`${this.API_URL}/restaurants/`, data);
+  }  
 
 }
