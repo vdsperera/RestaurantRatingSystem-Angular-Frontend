@@ -24,3 +24,13 @@
 mat-label {
   color: gray;	
 }
+
+#hotel_map {
+    height: 100px;
+    width: 100px;
+}
+
+.hotel_map {
+    height: 100px;
+    width: 100px;
+}
