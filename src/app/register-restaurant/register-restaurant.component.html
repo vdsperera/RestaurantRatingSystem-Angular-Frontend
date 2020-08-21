@@ -5,7 +5,7 @@
   background-color: lightblue;
 }*/
 
-mat-label {
+/*mat-label {
   color: gray;	
 }
 
@@ -15,12 +15,12 @@ mat-option-value {
 
 mat-select-value {
   color: gray;	
-}
+}*/
 
-#hotel_map {
+/*#hotel_map {
     height: 400px;
     width: 100%;
-  }
+  }*/
 
 </style>
 
@@ -29,9 +29,9 @@ mat-select-value {
 	  <mat-card-title>{{ restaurant.id }}</mat-card-title>
   </ng-container>
 </div> -->
-
+<body>
 <div class="clsmain">
-	<h1> Register restaurant </h1>
+	<h1> Register Restaurant </h1>
 	<form class="create-account-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
 		<mat-form-field appearance="fill">
 		  <mat-label>What is your role</mat-label>
@@ -41,43 +41,47 @@ mat-select-value {
 		  </mat-select>
 		</mat-form-field>
 		<br>
-		<mat-form-field>
+		<mat-form-field appearance='fill'>
     		<mat-label class="clslbl">Business name</mat-label>
     		<input name="rest_name" matInput #rest_name ngModel />			
 		</mat-form-field>
 		<br>
-		<mat-form-field>
+		<mat-form-field appearance='fill'>
     		<mat-label>Phone number</mat-label>
     		<input name="rest_pnumber" matInput type="text" #rest_pnumber ngModel/>			
 		</mat-form-field>	
 		<br>	
-		<mat-form-field>
+		<mat-form-field appearance='fill'>
     		<mat-label>Website</mat-label>
     		<input name="rest_website" matInput type="text" #rest_website ngModel/>			
 		</mat-form-field>
 		<br>
-		<mat-form-field>
+		<mat-form-field appearance='fill'>
     		<mat-label>Email</mat-label>
     		<input name="email" matInput type="text" #rest_email ngModel/>			
 		</mat-form-field>
 		<br>
-		<mat-form-field>
+		<mat-form-field appearance='fill'>
     		<mat-label>City/Town, Province</mat-label>
     		<input name="city" matInput type="text" type="text" #rest_city ngModel/>			
 		</mat-form-field>
 		<br>
-		<mat-form-field>
+		<mat-form-field appearance='fill'>
     		<mat-label>Address</mat-label>
     		<input  name="rest_address" matInput type="text" #rest_address ngModel />			
 		</mat-form-field>		
 		<br>
-		<button mat-button type="submit">Submit</button>			
+		<div class="row">
+			<div id="hotel_map" class="hotel_map"></div>
+		</div>		
+		<br>
+			<button mat-raised-button type="submit">Submit</button>		
 		<br>
 	</form>
 
 
 </div>
 
-<div class="row">
-    <div id="hotel_map" class="hotel_map"></div>
-</div>
+
+
+</body>
