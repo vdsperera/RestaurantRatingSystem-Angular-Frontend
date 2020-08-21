@@ -4,4 +4,5 @@ export interface MenuItem {
   showOnMobile: boolean;
   showOnTablet: boolean;
   showOnDesktop: boolean;
+  route: string;
 }
