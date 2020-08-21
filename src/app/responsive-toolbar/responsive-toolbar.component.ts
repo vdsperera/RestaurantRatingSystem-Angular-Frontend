@@ -31,8 +31,8 @@ export class ResponsiveToolbarComponent implements OnInit {
       showOnDesktop: true
     },
     {
-      label: 'Pricing',
-      icon: 'attach_money',
+      label: 'Add Restaurant',
+      icon: 'add_circle',
       showOnMobile: false,
       showOnTablet: false,
       showOnDesktop: true
