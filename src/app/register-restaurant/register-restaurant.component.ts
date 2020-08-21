@@ -44,8 +44,8 @@ export class RegisterRestaurantComponent implements OnInit {
         })
       ],
       view: new View({
-        center: olProj.fromLonLat([6.203364, 80.138088]),
-        zoom: 2
+        center: olProj.fromLonLat([80.138088, 6.203364]),
+        zoom: 10
       })
     });  	
   }
