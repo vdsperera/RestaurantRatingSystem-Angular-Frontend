@@ -17,7 +17,7 @@
 <h2></h2>
 
 
-
+<body>
 <!-- <mat-card class="example-card">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
@@ -154,29 +154,28 @@
 
 
 
-<div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px grid" fxLayoutAlign="flex-start">
+<div name='div_main' fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px grid" fxLayoutAlign="flex-start">
   <ng-container *ngFor="let restaurant of restaurants$ | async">
-    <app-card fxFlex="0 1 calc(33.3% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
+    <app-card fxFlex="0 1 calc(20% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
       <mat-card>
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{ restaurant.id }}</mat-card-title>
-          <mat-card-subtitle>{{ restaurant.name }}</mat-card-subtitle>
+          <mat-card-title>{{ restaurant.name }}</mat-card-title>
+          <mat-card-subtitle>{{ restaurant.address }}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-          <li>{{ restaurant.address }}</li>
-          <li>
+            <img mat-card-image src="https://cdn.pixabay.com/photo/2019/09/23/16/39/square-4499056_960_720.jpg" alt="Photo of a Shiba Inu">
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star checked"></span>
             <span class="fa fa-star"></span>
             <span class="fa fa-star"></span>
-          </li>
+            <span> 105 Reviews</span>
         </mat-card-content>
         <mat-card-actions>
           <button mat-button><i class="fa fa-heart"></i></button>
           <button mat-button><i class="fa fa-arrow-right"></i></button>
-          <button mat-button><i class="fa fa-pencil-square-o"></i></button>
+<!--           <button mat-button><i class="fa fa-pencil-square-o"></i></button> -->
         </mat-card-actions>
       </mat-card>      
     </app-card>  
@@ -388,3 +387,5 @@
       
     </div>
   </body> -->
+
+</body>
