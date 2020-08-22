@@ -30,7 +30,7 @@ mat-select-value {
   </ng-container>
 </div> -->
 <body>
-<div class="clsmain">
+<!-- <div class="clsmain">
 	<h1> Register Restaurant </h1>
 	<form class="create-account-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
 		<mat-form-field appearance="fill">
@@ -77,6 +77,58 @@ mat-select-value {
 		<br>
 			<button mat-raised-button type="submit">Submit</button>		
 		<br>
+	</form> -->
+
+<div class="clsmain">	
+	<form class="create-account-form" (ngSubmit)="onSubmit(f)" #f="ngForm">
+		<mat-form-field appearance="fill">
+		  <mat-label>What is your role</mat-label>
+		  <mat-select [formControl]='user_role' name="user_role" [(value)]="selected" ngModel >
+		    <mat-option value="Customer">Customer</mat-option>		  	
+		    <mat-option value="Restaurant Owner">Restaurant Owner</mat-option>
+		  </mat-select>
+		</mat-form-field>
+		<br>
+		<mat-form-field appearance='fill'>
+    		<mat-label class="clslbl">Business name</mat-label>
+    		<input [formControl]='rest_name' name="rest_name" matInput ngModel />			
+		</mat-form-field>
+		<br>
+		<mat-form-field appearance='fill'>
+    		<mat-label>Phone number</mat-label>
+    		<input [formControl]='rest_pnumber' name="rest_pnumber" matInput type="text" ngModel/>			
+		</mat-form-field>	
+		<br>	
+		<mat-form-field appearance='fill'>
+    		<mat-label>Website</mat-label>
+    		<input [formControl]='rest_website' name="rest_website" matInput type="text" ngModel/>			
+		</mat-form-field>
+		<br>
+		<mat-form-field appearance='fill'>
+    		<mat-label>Email</mat-label>
+    		<input [formControl]='rest_email' name="email" matInput type="text" ngModel/>			
+		</mat-form-field>
+		<br>
+		<mat-form-field appearance='fill'>
+    		<mat-label>Street</mat-label>
+    		<input [formControl]='rest_street' name="street" matInput type="text" type="text" ngModel/>			
+		</mat-form-field>
+		<br>
+		<mat-form-field appearance='fill'>
+    		<mat-label>City</mat-label>
+    		<input [formControl]='rest_city' name="city" matInput type="text" type="text" ngModel/>			
+		</mat-form-field>
+		<br>
+		<mat-form-field appearance='fill'>
+    		<mat-label>Zip Code</mat-label>
+    		<input [formControl]='rest_zip_code'  name="rest_zip_code" matInput type="text" ngModel />			
+		</mat-form-field>		
+		<br>
+		<div class="row">
+			<div id="hotel_map" class="hotel_map"></div>
+		</div>		
+		<br>
+			<button mat-raised-button type="submit">Submit</button>		
 	</form>
 
 
