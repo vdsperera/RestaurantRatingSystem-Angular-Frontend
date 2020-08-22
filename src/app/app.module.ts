@@ -22,7 +22,7 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-import { FormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -54,6 +54,7 @@ import { FormsModule} from '@angular/forms';
     MatInputModule,
     MatSelectModule,
     FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
