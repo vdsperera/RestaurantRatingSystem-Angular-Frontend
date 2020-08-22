@@ -13,6 +13,7 @@ import Icon from 'ol/style/Icon';
 import OSM from 'ol/source/OSM';
 import * as olProj from 'ol/proj';
 import TileLayer from 'ol/layer/Tile';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-register-restaurant',
@@ -23,6 +24,14 @@ export class RegisterRestaurantComponent implements OnInit {
 
   selected = 'Customer';
   restaurants$: Observable<Restaurant[]>;
+  user_role = new FormControl('');
+  rest_name = new FormControl('');
+  rest_pnumber = new FormControl('');
+  rest_website = new FormControl('');
+  rest_email = new FormControl('');
+  rest_street = new FormControl('');
+  rest_city = new FormControl('');
+  rest_zip_code = new FormControl('');
 
   // user_role: string;
   // rest_name: string;
@@ -63,7 +72,7 @@ export class RegisterRestaurantComponent implements OnInit {
     		mdata:{
 			    user: "vidumini",    
 			  	name:form.value.rest_name,
-			    address: form.value.rest_address,
+			    address: form.value.rest_city,
 			    phone_number: form.value.rest_pnumber,
 			    longitude: "23.5444",
 			    latitude: "77.5444",
@@ -96,6 +105,11 @@ export class RegisterRestaurantComponent implements OnInit {
       err => console.log(err)
     );
 
+  }
+
+  update_rest_name()
+  {
+    this.rest_name.setValue('New Name');
   }
 
 
