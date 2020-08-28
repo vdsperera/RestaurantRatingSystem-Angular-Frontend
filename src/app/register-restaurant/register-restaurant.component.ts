@@ -55,13 +55,29 @@ export class RegisterRestaurantComponent implements OnInit {
   // rest_longitude: string;
   // rest_latitude: string;
   // rest_pnumber: string;
-  map: Map
+  // map: Map
+  mp: Map;
+
+  mouse_position = new olControl.MousePosition({
+    coordinateFormat: olCoordinate.createStringXY(2),
+    projection: 'EPSG:4326',
+    target: document.getElementById('myposition'),
+    undefinedHTML: '&nbsp'
+  });
+
+  fileToUpload: File;
+
+  // this.map.addControl(this.mouse_position);
+
+
+
+  model = new Restaurant('Raveena', 'Unawatuna', '0770273653', '23', '77');
 
   constructor(private api_service: ApiService) { }
 
   ngOnInit(): void {
   	// this.restaurants$ = this.api_service.get_restaurants();
-    this.map = new Map({
+    this.mp = new Map({
       target: 'hotel_map',
       layers: [
         new TileLayer({
@@ -73,9 +89,9 @@ export class RegisterRestaurantComponent implements OnInit {
         zoom: 10
       })
     });  	
-  }
 
-  model = new Restaurant('Raveena', 'Unawatuna', '0770273653', '23', '77');
+    this.mp.addControl(this.mouse_position);
+  }
 
   
 
