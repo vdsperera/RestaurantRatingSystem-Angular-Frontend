@@ -12,8 +12,11 @@ import Style from 'ol/style/Style';
 import Icon from 'ol/style/Icon';
 import OSM from 'ol/source/OSM';
 import * as olProj from 'ol/proj';
+import * as olControl from 'ol/control'
 import TileLayer from 'ol/layer/Tile';
-import { FormControl } from '@angular/forms';
+import * as olCoordinate from 'ol/coordinate';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-register-restaurant',
@@ -136,14 +139,18 @@ export class RegisterRestaurantComponent implements OnInit {
       resp => console.log(resp),
       err => console.log(err)
     );
+    //this.map.addControl(this.mouse_position);
 
   }
 
-  update_rest_name()
+  // update_rest_name()
+  // {
+  //   this.rest_name.setValue('New Name');
+  // }
+  handleFileInput(files: FileList)
   {
-    this.rest_name.setValue('New Name');
+  	this.fileToUpload = files.item(0);
   }
-
 
 }
 
