@@ -24,14 +24,30 @@ export class RegisterRestaurantComponent implements OnInit {
 
   selected = 'Customer';
   restaurants$: Observable<Restaurant[]>;
-  user_role = new FormControl('');
-  rest_name = new FormControl('');
-  rest_pnumber = new FormControl('');
-  rest_website = new FormControl('');
-  rest_email = new FormControl('');
-  rest_street = new FormControl('');
-  rest_city = new FormControl('');
-  rest_zip_code = new FormControl('');
+  phone_number_pattern = '^[?:0|94|\+94|0094]?[?:[11|21|23|24|25|26|27|31|32|33|34|35|36|37|38|41|45|47|51|52|54|55|57|63|65|66|67|81|91][0|2|3|4|5|7|9]|7[0|1|2|5|6|7|8]\d]\d{6}$';
+
+
+  // user_role = new FormControl('', Validators.required);
+  // rest_name = new FormControl('', Validators.required);
+  // rest_pnumber = new FormControl('');
+  // rest_website = new FormControl('');
+  // rest_email = new FormControl('', Validators.email);
+  // rest_street = new FormControl('');
+  // rest_city = new FormControl('', Validators.required);
+  // rest_zip_code = new FormControl('');
+
+
+  rest_register_form = new FormGroup(
+  	{
+	  user_role: new FormControl('', Validators.required),
+	  rest_name: new FormControl('', Validators.required),
+	  rest_pnumber: new FormControl('', Validators.pattern(this.phone_number_pattern)),
+	  rest_website: new FormControl(''),
+	  rest_email: new FormControl('', Validators.email),
+	  rest_street: new FormControl(''),
+	  rest_city: new FormControl('', Validators.required),
+	  rest_zip_code: new FormControl('')
+  	});
 
   // user_role: string;
   // rest_name: string;
