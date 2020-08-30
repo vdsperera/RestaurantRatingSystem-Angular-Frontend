@@ -23,13 +23,15 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RestaurantListComponent,
     ResponsiveToolbarComponent,
-    RegisterRestaurantComponent
+    RegisterRestaurantComponent,
+    RestaurantDetailsComponent
   ],
   imports: [
     BrowserModule,
