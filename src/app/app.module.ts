@@ -25,6 +25,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { StarRatingComponent } from './star-rating/star-rating.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     RestaurantListComponent,
     ResponsiveToolbarComponent,
     RegisterRestaurantComponent,
-    RestaurantDetailsComponent
+    RestaurantDetailsComponent,
+    StarRatingComponent
   ],
   imports: [
     BrowserModule,
