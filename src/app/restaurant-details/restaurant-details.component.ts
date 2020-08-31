@@ -9,18 +9,55 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class RestaurantDetailsComponent implements OnInit {
 
 
-  @Input('rating') private rating: number;
-  @Input('start_count') private start_count: number;
-  @Input('color') private color: string;
-  @Output('rating_updated') private rating_updated = new EventEmitter();
+  @Input('rating') public rating: number;
+  @Input('star_count') public star_count: number=5;
+  @Input('color') public color: string;
+  @Output('rating_updated') public rating_updated = new EventEmitter();
 
-  private snack_bar_duration: number = 2000;
-  private rating_array = [];
+  public snack_bar_duration: number = 2000;
+  public rating_array = [];
 
 
   constructor(private snack_bar: MatSnackBar) { }
 
   ngOnInit(): void {
+    for(let index=0; index<this.star_count; index++)
+    {
+      this.rating_array.push(index);
+    }
   }
+
+  show_icon(index: number)
+  {
+    if(this.rating <= index+1)
+    {
+      return 'note';
+    }
+    else
+    {
+      return 'star_border';
+    }
+
+  }
+
+  onClick(rating:number) {
+    console.log(rating)
+    this.snack_bar.open('You rated ' + rating + ' / ' + this.star_count, '', {
+      duration: this.snack_bar_duration
+    });
+    this.rating_updated.emit(rating);
+    return false;
+  }  
+
+
+
+}
+
+
+export enum star_rating_color
+{
+  primary = 'primary',
+  accent = 'accent',
+  warn = 'warn'
 
 }
