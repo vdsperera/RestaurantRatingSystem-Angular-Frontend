@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Rating } from '../models/rating';
 
 @Component({
   selector: 'app-star-rating',
@@ -27,6 +28,7 @@ export class StarRatingComponent implements OnInit {
   public rating_array = [];
   public price_rating_array = [];
   public service_rating_array = [];
+  @Output('rating_model') public rating_model = new Rating;
 
   constructor(private snack_bar: MatSnackBar) { }
 
@@ -95,6 +97,7 @@ export class StarRatingComponent implements OnInit {
     //this.rating_updated.emit(rating);
     console.log(this.rating);
     this.rating = rating;
+    this.rating_model.set_dish_rating(rating);
     return false;
   }  
 
@@ -106,6 +109,7 @@ export class StarRatingComponent implements OnInit {
     //this.rating_updated.emit(rating);
     console.log(this.price_rating);
     this.price_rating = price_rating;
+    this.rating_model.set_price_rating(price_rating);
     return false;
   }
 
@@ -117,7 +121,10 @@ export class StarRatingComponent implements OnInit {
     //this.rating_updated.emit(rating);
     console.log(this.service_rating);
     this.service_rating = service_rating;
+    this.rating_model.set_service_rating(service_rating);
+    console.log(this.rating_model);
     return false;
+
   }
 
 }
