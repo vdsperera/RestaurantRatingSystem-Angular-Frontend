@@ -1,6 +1,19 @@
-<mat-select name="user_role" [(value)]="selected" ngModel >
-	<mat-option value="Kottu">Kottu</mat-option>		  	
-	<mat-option value="Fried Rice">Fried Rice</mat-option>
-	<mat-option value="Chopsey Rice">Chopsey Rice</mat-option>
-</mat-select>
-<app-star-rating></app-star-rating>
+<div class='rating'>
+<!-- 	<mat-form-field> -->
+<!-- 	<mat-select class='mat-select-dish' name="user_role" ngModel placeholder='Dish'>
+		<mat-option class='mat-option-dish' value="Kottu">Kottu</mat-option>		  	
+		<mat-option class='mat-option-dish' value="Fried Rice">Fried Rice</mat-option>
+		<mat-option class='mat-option-dish' value="Chopsey Rice">Chopsey Rice</mat-option>
+	</mat-select>
+	<br> -->
+	<select name="cars" id="cars">
+	  <option value="Kottu">Kottu</option>
+	  <option value="Fried Rice">Fried Rice</option>
+	  <option value="Chopsey Rice">Chopsey Rice</option>
+	</select>	
+<!-- 	</mat-form-field> -->
+	<br>
+	<app-star-rating></app-star-rating>
+	<br>
+	<button mat-raised-button type="submit">Submit</button>	
+</div>
