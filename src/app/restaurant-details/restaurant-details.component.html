@@ -13,7 +13,7 @@
 	</select>	
 <!-- 	</mat-form-field> -->
 	<br>
-	<app-star-rating></app-star-rating>
+	<app-star-rating (rating_model_event) = "rating_event_hander($event)"></app-star-rating>
 	<br>
-	<button mat-raised-button type="submit">Submit</button>	
+	<button mat-raised-button >Submit</button>	
 </div>
