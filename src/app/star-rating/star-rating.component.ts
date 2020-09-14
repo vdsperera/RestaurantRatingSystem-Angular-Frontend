@@ -28,7 +28,9 @@ export class StarRatingComponent implements OnInit {
   public rating_array = [];
   public price_rating_array = [];
   public service_rating_array = [];
-  @Output('rating_model') public rating_model = new Rating;
+  public rating_model = new Rating;
+  @Output('rating_model_event') rating_model_event = new EventEmitter<Rating>(); 
+
 
   constructor(private snack_bar: MatSnackBar) { }
 
@@ -123,6 +125,7 @@ export class StarRatingComponent implements OnInit {
     this.service_rating = service_rating;
     this.rating_model.set_service_rating(service_rating);
     console.log(this.rating_model);
+    this.rating_model_event.emit(this.rating_model);
     return false;
 
   }
