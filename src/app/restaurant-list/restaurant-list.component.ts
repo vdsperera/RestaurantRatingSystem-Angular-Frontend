@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs'
+import { Router } from '@angular/router'
 
 import { ApiService } from '../api.service' 
 import { Restaurant } from '../restaurant';
+
 
 @Component({
   selector: 'app-restaurant-list',
@@ -12,7 +14,7 @@ import { Restaurant } from '../restaurant';
 export class RestaurantListComponent implements OnInit {
   restaurants$: Observable<Restaurant[]>;
 
-  constructor(private apiService: ApiService) { }
+  constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit(): void {
     this.get_restaurants();
@@ -22,6 +24,11 @@ export class RestaurantListComponent implements OnInit {
   public get_restaurants() {
     this.restaurants$ = this.apiService.get_restaurants();
 
+  }
+
+  public view_details(restaurant_id) {
+    console.log(restaurant_id)
+    this.router.navigate(['/restaurant', restaurant_id]);
   }
 
 }
