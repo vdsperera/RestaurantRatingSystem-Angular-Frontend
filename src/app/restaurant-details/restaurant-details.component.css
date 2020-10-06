@@ -22,3 +22,10 @@ button{
 :host /deep/ .mat-option-dish-text{
   color: red;
 }
+
+.mat-button-base {
+  margin: 8px 8px 8px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
