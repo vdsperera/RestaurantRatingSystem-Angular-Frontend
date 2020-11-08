@@ -4,7 +4,7 @@ import { Router } from '@angular/router'
 
 import { ApiService } from '../api.service' 
 import { Restaurant } from '../restaurant';
-
+import { map } from 'rxjs/operators'; 
 
 @Component({
   selector: 'app-restaurant-list',
@@ -18,17 +18,23 @@ export class RestaurantListComponent implements OnInit {
 
   ngOnInit(): void {
     this.get_restaurants();
-    console.log(this.restaurants$);
   }
 
   public get_restaurants() {
     this.restaurants$ = this.apiService.get_restaurants();
+    this.apiService.get_restaurants()
+    .subscribe((data) => {
+       // console.log('start component console')
+       this.restaurants$ = data['data']['restaurant_list']
+       // console.log(data['data']['restaurant_list'])
+       // console.log('end component console')
+    });
 
   }
 
   public view_details(restaurant_id) {
     console.log(restaurant_id)
-    this.router.navigate(['/restaurant', restaurant_id]);
+    this.router.navigate(['/restaurants', restaurant_id]);
   }
 
 }
