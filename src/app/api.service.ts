@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Restaurant } from './restaurant';
+import { map } from 'rxjs/operators'; 
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,17 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   public get_restaurants(): Observable<Restaurant[]> {
-    return this.http.get<Restaurant[]>(`${this.API_URL}/restaurants/`);
+    // console.log(this.http.get<Restaurant>(`${this.API_URL}/restaurants/list`))
+    console.log('start api service')
+    this.http.get<Restaurant[]>(`${this.API_URL}/restaurants/list`)
+    .subscribe((data) => {
+       console.log('start api service console')
+       console.log(data)
+       console.log('end api service console')
+    });
+    console.log('end api service')
+    return this.http.get<Restaurant[]>(`${this.API_URL}/restaurants/list`)
+    ;
   }
 
   public register_restaurant(restaurant: Restaurant):Observable<Restaurant>
