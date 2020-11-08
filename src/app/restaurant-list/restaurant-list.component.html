@@ -155,7 +155,7 @@
 
 
 <div name='div_main' fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px grid" fxLayoutAlign="flex-start">
-  <ng-container *ngFor="let restaurant of restaurants$ | async">
+  <ng-container *ngFor="let restaurant of restaurants$">
     <app-card fxFlex="0 1 calc(20% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
       <mat-card>
         <mat-card-header>
