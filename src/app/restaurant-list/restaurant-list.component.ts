@@ -26,23 +26,41 @@ export class RestaurantListComponent implements OnInit {
     // this.restaurants$ = this.apiService.get_restaurants();
     this.apiService.get_restaurants()
     .subscribe((data) => {
-       console.log('start component console')
+       console.log('start component console restaurants')
        // this.restaurants$ = data['data']['restaurant_list']
        this.restaurants = data['data']['restaurant_list']
        // this.rests = data['data']['restaurant_list']
        // // console.log(this.rests)
        
        // // this.rests.sort(function(a, b){return a.restaurant_id - b.restaurant_id});
-       this.restaurants.sort(function(a, b){return b.overall_rating - a.overall_rating});
+       // this.restaurants.sort(function(a, b){return b.overall_rating - a.overall_rating});
 
-       // console.log(this.rests)
-       // console.log('end component console')
+       console.log(this.restaurants)
+       console.log('end component console restaurants')
     });
     // console.log('start component console')
     // console.log(this.rests)
     // console.log(this.restaurants)
     // console.log('end component console')
 
+  }
+
+  public get_restaurants_dish()
+  {
+    this.apiService.get_restaurants_dish()
+    .subscribe((data) => {
+       console.log('start component console restaurant dish')
+       // this.restaurants$ = data['data']['restaurant_list']
+       this.restaurants = data['data']['restaurant_list']
+       // this.rests = data['data']['restaurant_list']
+       // // console.log(this.rests)
+       
+       // // this.rests.sort(function(a, b){return a.restaurant_id - b.restaurant_id});
+       // this.restaurants.sort(function(a, b){return b.overall_rating - a.overall_rating});
+
+       console.log(this.restaurants)
+       console.log('end component console restaurant dish')
+    });    
   }
 
   public order_list_by_overall_rating_des()
