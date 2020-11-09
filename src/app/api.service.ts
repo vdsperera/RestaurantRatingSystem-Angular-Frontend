@@ -15,14 +15,14 @@ export class ApiService {
 
   public get_restaurants(): Observable<Restaurant[]> {
     // console.log(this.http.get<Restaurant>(`${this.API_URL}/restaurants/list`))
-    console.log('start api service')
-    this.http.get<Restaurant[]>(`${this.API_URL}/restaurants/list`)
-    .subscribe((data) => {
-       console.log('start api service console')
-       console.log(data)
-       console.log('end api service console')
-    });
-    console.log('end api service')
+    // console.log('start api service')
+    // this.http.get<Restaurant[]>(`${this.API_URL}/restaurants/list`)
+    // .subscribe((data) => {
+    //    // console.log('start api service console')
+    //    // console.log(data)
+    //    // console.log('end api service console')
+    // });
+    // console.log('end api service')
     return this.http.get<Restaurant[]>(`${this.API_URL}/restaurants/list`)
     ;
   }
