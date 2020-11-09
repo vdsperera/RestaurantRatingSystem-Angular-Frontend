@@ -26,6 +26,21 @@ export class ApiService {
     return this.http.get<Restaurant[]>(`${this.API_URL}/restaurants/list`)
     ;
   }
+  
+  // test
+  public get_restaurants_dish(): Observable<Restaurant[]> {
+    // console.log(this.http.get<Restaurant>(`${this.API_URL}/restaurants/list`))
+    // console.log('start api service')
+    // this.http.get<Restaurant[]>(`${this.API_URL}/restaurants/list`)
+    // .subscribe((data) => {
+    //    // console.log('start api service console')
+    //    // console.log(data)
+    //    // console.log('end api service console')
+    // });
+    // console.log('end api service')
+    return this.http.get<Restaurant[]>(`${this.API_URL}/restaurants/list?dishid=2`)
+    ;
+  }
 
   public register_restaurant(restaurant: Restaurant):Observable<Restaurant>
   {
