@@ -12,7 +12,9 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./restaurant-list.component.css']
 })
 export class RestaurantListComponent implements OnInit {
-  restaurants$: Observable<Restaurant[]>;
+  // restaurants$: Observable<Restaurant[]>;
+  restaurants: Restaurant;
+  rests: any;
 
   constructor(private apiService: ApiService, private router: Router) { }
 
@@ -21,15 +23,46 @@ export class RestaurantListComponent implements OnInit {
   }
 
   public get_restaurants() {
-    this.restaurants$ = this.apiService.get_restaurants();
+    // this.restaurants$ = this.apiService.get_restaurants();
     this.apiService.get_restaurants()
     .subscribe((data) => {
-       // console.log('start component console')
-       this.restaurants$ = data['data']['restaurant_list']
-       // console.log(data['data']['restaurant_list'])
+       console.log('start component console')
+       // this.restaurants$ = data['data']['restaurant_list']
+       this.restaurants = data['data']['restaurant_list']
+       // this.rests = data['data']['restaurant_list']
+       // // console.log(this.rests)
+       
+       // // this.rests.sort(function(a, b){return a.restaurant_id - b.restaurant_id});
+       this.restaurants.sort(function(a, b){return b.overall_rating - a.overall_rating});
+
+       // console.log(this.rests)
        // console.log('end component console')
     });
+    // console.log('start component console')
+    // console.log(this.rests)
+    // console.log(this.restaurants)
+    // console.log('end component console')
 
+  }
+
+  public order_list_by_overall_rating_des()
+  {
+    this.restaurants.sort(function(a, b){return b.overall_rating - a.overall_rating});
+  }
+
+  public order_list_by_overall_rating_ase()
+  {
+    this.restaurants.sort(function(a, b){return a.overall_rating - b.overall_rating});
+  }
+
+  public order_list_by_no_of_ratings_des()
+  {
+    this.restaurants.sort(function(a, b){return b.total_no_of_ratings - a.total_no_of_ratings});
+  }
+
+  public order_list_by_no_of_ratings_ase()
+  {
+    this.restaurants.sort(function(a, b){return a.total_no_of_ratings - b.total_no_of_ratings});
   }
 
   public view_details(restaurant_id) {
