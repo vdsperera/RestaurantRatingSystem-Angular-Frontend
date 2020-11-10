@@ -28,7 +28,7 @@ export class ApiService {
   }
   
   // test
-  public get_restaurants_dish(): Observable<Restaurant[]> {
+  public get_restaurants_dish(dish_id): Observable<Restaurant[]> {
     // console.log(this.http.get<Restaurant>(`${this.API_URL}/restaurants/list`))
     // console.log('start api service')
     // this.http.get<Restaurant[]>(`${this.API_URL}/restaurants/list`)
@@ -38,7 +38,7 @@ export class ApiService {
     //    // console.log('end api service console')
     // });
     // console.log('end api service')
-    return this.http.get<Restaurant[]>(`${this.API_URL}/restaurants/list?dishid=2`)
+    return this.http.get<Restaurant[]>(`${this.API_URL}/restaurants/list?dishid=${dish_id}`)
     ;
   }
 
