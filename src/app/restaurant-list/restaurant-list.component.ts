@@ -47,7 +47,7 @@ export class RestaurantListComponent implements OnInit {
 
   public get_restaurants_dish()
   {
-    this.apiService.get_restaurants_dish()
+    this.apiService.get_restaurants_dish(3)
     .subscribe((data) => {
        console.log('start component console restaurant dish')
        // this.restaurants$ = data['data']['restaurant_list']
