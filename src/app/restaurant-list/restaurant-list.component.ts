@@ -96,5 +96,26 @@ export class RestaurantListComponent implements OnInit {
     console.log(restaurant_id)
     this.router.navigate(['/restaurants', restaurant_id]);
   }
+  public ar
+  public rn
+
+  public questioner(x) {
+    this.ar =  Array(Math.round(x));
+    this.rn = Math.floor(x)
+    console.log(this.rn)
+    // return `<span class="fa fa-star checked"></span>`; 
+  }
+
+  public arrayOne(n: number): any[] {
+    // console()
+    // return this.ar;
+    return Array(this.rn)
+  }
+
+  public arrayTwo(n: number): any[] {
+    // console()
+    // return this.ar;
+    return Array(5-this.rn)
+  }
 
 }
