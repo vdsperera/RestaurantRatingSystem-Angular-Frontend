@@ -6,14 +6,16 @@
 		<mat-option class='mat-option-dish' value="Chopsey Rice">Chopsey Rice</mat-option>
 	</mat-select>
 	<br> -->
-	<select name="cars" id="cars">
-	  <option value="Kottu">Dish 01</option>
-	  <option value="Fried Rice">Dish 02</option>
-	  <option value="Chopsey Rice">Dish 03</option>
+	<select name="dishes" id="dishesdrop">
+	  <option value="none">none</option>
+	  <option value="1">Dish 01</option>
+	  <option value="2">Dish 02</option>
+	  <option value="3">Dish 03</option>
+	  <option value="4">Dish 04</option>
 	</select>	
 <!-- 	</mat-form-field> -->
 	<br>
 	<app-star-rating (rating_model_event) = "rating_event_hander($event)"></app-star-rating>
 	<br>
-	<button mat-raised-button color="primary">Submit</button>	
+	<button mat-raised-button color="primary" (click)=submit()>Submit</button>	
 </div>
