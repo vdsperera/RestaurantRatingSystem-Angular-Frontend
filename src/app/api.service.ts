@@ -54,4 +54,9 @@ export class ApiService {
     return this.http.post(`${this.API_URL}/restaurants/`, data);
   }  
 
+  public add_rating(data):Observable<any>
+  {
+    return this.http.post(`${this.API_URL}/ratings/`, data);
+  }
+
 }
