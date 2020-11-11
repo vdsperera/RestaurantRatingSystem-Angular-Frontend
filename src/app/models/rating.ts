@@ -26,5 +26,15 @@ export class Rating
   public set_service_rating(service_rating: number)
   {
     this.service_rating = service_rating;
+  }
+
+  public get_ratings()
+  {
+    let model = {
+      "dish_rating":this.dish_rating,
+      "price_rating": this.price_rating,
+      "service_rating": this.service_rating
+    }
+    return model
   }  
 }
