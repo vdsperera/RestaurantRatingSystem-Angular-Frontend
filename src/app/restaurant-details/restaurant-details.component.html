@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <div class='rating'>
 <!-- 	<mat-form-field> -->
 <!-- 	<mat-select class='mat-select-dish' name="user_role" ngModel placeholder='Dish'>
@@ -17,5 +18,43 @@
 	<br>
 	<app-star-rating (rating_model_event) = "rating_event_hander($event)"></app-star-rating>
 	<br>
-	<button mat-raised-button color="primary" (click)=submit()>Submit</button>	
+	<button mat-raised-button color="primary" (click)=submit()>Submit</button>
+	<div>
+		<ul style="list-style-type:none;">
+<!--		<li>
+		Dish 01
+		<span class="fa fa-star checked"></span>			
+		</li>
+		<li>
+		Dish 02
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>			
+		</li>
+		<li>
+		Dish 03
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>			
+		</li>
+		<li>
+		Dish 04
+		<span class="fa fa-star checked"></span>			
+		</li>
+-->
+		<ng-container *ngFor="let item of dish_rating_list">
+			{{set_star_rating(item.overall_rating)}}
+			<li>{{item.dish_name}}
+			<span *ngFor="let item of checked_star_array()"><span class="fa fa-star checked"></span></span>
+			<span *ngFor="let item of star_array()"><span class="fa fa-star"></span></span>
+			{{checked_star}}
+			</li>
+		</ng-container>
+	<select  name="dishes" id="dishesdrop">
+		<option value="none">none</option>
+		<ng-container *ngFor="let item of dish_rating_list">
+			<option value={{item.dish_id}}>{{item.dish_name}}</option>
+		</ng-container>  
+	</select>
+		</ul>
+	</div>
 </div>
