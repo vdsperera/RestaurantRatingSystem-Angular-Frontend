@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Restaurant } from './restaurant';
+import { DishRating } from './dish_rating'
 import { map } from 'rxjs/operators'; 
 
 @Injectable({
@@ -57,6 +58,16 @@ export class ApiService {
   public add_rating(data):Observable<any>
   {
     return this.http.post(`${this.API_URL}/ratings/`, data);
+  }
+
+  public get_dish_rating_list_for_restaurant(restaurant_id):Observable<any[]>
+  {
+    return this.http.get<any[]>(`${this.API_URL}/ratings/dishes/list?restid=${restaurant_id}`)
+     // .subscribe((data) => {
+    //    // console.log('start api service console')
+    //    // console.log(data)
+    //    // console.log('end api service console')
+    // });
   }
 
 }
