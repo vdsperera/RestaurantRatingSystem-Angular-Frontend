@@ -25,6 +25,7 @@ export class ApiService {
     // });
     // console.log('end api service')
     return this.http.get<Restaurant[]>(`${this.API_URL}/restaurants/list`)
+    // return this.http.get<Restaurant[]>(`/assets/restaurant_list.json`)
     ;
   }
   
