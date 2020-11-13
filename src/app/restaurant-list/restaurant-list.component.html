@@ -152,6 +152,13 @@
   </ng-container>
 </div> -->
 
+<mat-form-field class="example-form-field">
+  <mat-label>Clearable input</mat-label>
+  <input matInput type="search" [(ngModel)]="value">
+  <button mat-button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+    <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field><br>
 
 
   <!-- <button (click)= get_restaurants_dish() mat-button>dish rating list for 2<i class="fa fa-heart"></i></button> -->
