@@ -179,11 +179,11 @@
       <mat-card>
         <mat-card-header>
           <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{ restaurant.name }}</mat-card-title>
+          <mat-card-title>{{ restaurant.restaurant_name }}</mat-card-title>
           <mat-card-subtitle>{{ restaurant.address }}</mat-card-subtitle>
         </mat-card-header>
         <mat-card-content>
-            <img mat-card-image src="/assets/square-4499056_960_720.jpg" alt="Photo of a Shiba Inu">
+            <img mat-card-image src="/assets/images/square-4499056_960_720.jpg" alt="Photo of a Shiba Inu">
             {{questioner(restaurant.overall_rating)}}
             <span *ngFor="let item of arrayOne(3); let i = index;"><span class="fa fa-star checked"></span> </span>
             <span *ngFor="let item of arrayTwo(3); let i = index;"><span class="fa fa-star"></span> </span>
