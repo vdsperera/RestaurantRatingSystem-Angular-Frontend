@@ -8,11 +8,10 @@
 	</mat-select>
 	<br> -->
 	<select name="dishes" id="dishesdrop">
-	  <option value="none">none</option>
-	  <option value="1">Dish 01</option>
-	  <option value="2">Dish 02</option>
-	  <option value="3">Dish 03</option>
-	  <option value="4">Dish 04</option>
+		<option value="null">none</option>
+		<ng-container *ngFor="let item of restaurant_dishes">
+			<option value={{item.dish_id}}>{{item.dish_name}}</option>
+		</ng-container>  
 	</select>	
 <!-- 	</mat-form-field> -->
 	<br>
@@ -49,12 +48,6 @@
 			{{checked_star}}
 			</li>
 		</ng-container>
-	<select  name="dishes" id="dishesdrop">
-		<option value="none">none</option>
-		<ng-container *ngFor="let item of dish_rating_list">
-			<option value={{item.dish_id}}>{{item.dish_name}}</option>
-		</ng-container>  
-	</select>
 		</ul>
 	</div>
 </div>
