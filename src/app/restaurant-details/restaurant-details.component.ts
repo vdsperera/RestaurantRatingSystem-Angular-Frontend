@@ -19,6 +19,8 @@ export class RestaurantDetailsComponent implements OnInit {
   public dish_rating_list;
   private star;
   private checked_star;
+  private restaurant_dishes;
+  private restaurant;
   
 
   constructor(private route: ActivatedRoute,
@@ -26,6 +28,7 @@ export class RestaurantDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     this.get_dish_rating_list(this.route.snapshot.paramMap.get('id'))
+    this.get_restaurant(this.route.snapshot.paramMap.get('id'))
   }
 
   rating_event_hander($event: any)
@@ -42,6 +45,10 @@ export class RestaurantDetailsComponent implements OnInit {
     let value = (<HTMLSelectElement>document.getElementById('dishesdrop')).value;
     let restaurant_id = this.route.snapshot.paramMap.get('id')
     // console.log(rating_data.price_rating);
+    if(value == 'null'){
+      value = null
+    }
+
     const data = {
       data:{
         mdata:{
@@ -72,12 +79,22 @@ export class RestaurantDetailsComponent implements OnInit {
     );
   }
 
+  get_restaurant(restaurant_id)
+  {
+   this.api_service.get_restaurant(restaurant_id)
+   .subscribe((data) => {
+     this.restaurant_dishes = data['data']['dishes']
+     console.log(this.restaurant_dishes)
+   });     
+  }
+
   get_dish_rating_list(restaurant_id)
   {
    this.api_service.get_dish_rating_list_for_restaurant(restaurant_id)
    .subscribe((data) => {
      this.dish_rating_list = data['data']['dish_ratings']
-     console.log(this.dish_rating_list)
+     // this.restaurant_dishes = data['data']['dish_ratings']['dishes']
+     // console.log(this.restaurant_dishes)
    }); 
   }
 
