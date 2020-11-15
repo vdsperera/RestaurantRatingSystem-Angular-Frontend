@@ -163,13 +163,12 @@
 
   <!-- <button (click)= get_restaurants_dish() mat-button>dish rating list for 2<i class="fa fa-heart"></i></button> -->
   <button (click)= get_restaurants() mat-button>get restaurants<i class="fa fa-heart"></i></button>
-<select name="dish id" id="dishesdrop">
-  <option value="none">none</option>
-  <option value="1">Dish 01</option>
-  <option value="2">Dish 02</option>
-  <option value="3">Dish 03</option>
-  <option value="4">Dish 04</option>
-</select>
+  <select name="dishes" id="dishesdrop">
+    <option value="null">none</option>
+    <ng-container *ngFor="let item of system_dishes">
+      <option value={{item.dish_id}}>{{item.dish_name}}</option>
+    </ng-container>  
+  </select> 
 <button (click)= order_list_by_overall_rating_ase() mat-button>ASC<i class="fa fa-heart"></i></button>
 <button (click)= order_list_by_overall_rating_des() mat-button>DES<i class="fa fa-heart"></i></button>
 
