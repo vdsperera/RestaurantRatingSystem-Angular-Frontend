@@ -15,19 +15,20 @@ export class RestaurantListComponent implements OnInit {
   // restaurants$: Observable<Restaurant[]>;
   restaurants: Restaurant;
   rests: any;
+  private system_dishes;
 
   constructor(private apiService: ApiService, private router: Router) { }
 
   ngOnInit(): void {
     this.get_restaurants();
-
+    this.get_system_dish_list()
   }
 
   public get_restaurants() {
     let value = (<HTMLSelectElement>document.getElementById('dishesdrop')).value;
-    if(value != 'none')
-      this.get_restaurants_dish(value)
-    else
+    // if(value != 'null')
+    //   this.get_restaurants_dish(value)
+    if(value == 'null')
     {
       // this.restaurants$ = this.apiService.get_restaurants();
       this.apiService.get_restaurants()
@@ -49,6 +50,10 @@ export class RestaurantListComponent implements OnInit {
       // console.log(this.restaurants)
       // console.log('end component console')
     }
+    else{
+      this.get_restaurants_dish(value)
+    }
+
 
   }
 
@@ -116,6 +121,15 @@ export class RestaurantListComponent implements OnInit {
     // console()
     // return this.ar;
     return Array(5-this.rn)
+  }
+
+  public get_system_dish_list()
+  {
+    this.apiService.get_system_dish_list()
+    .subscribe((data) => {
+      this.system_dishes = data['data']['dishes']
+      console.log(this.system_dishes)
+    });
   }
 
 }
