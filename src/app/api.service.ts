@@ -110,4 +110,10 @@ export class ApiService {
 
   }
 
+  public get_system_dish_list():Observable<any>
+  {
+    return this.http.get(`${this.API_URL}/dishes/`);
+  }
+      
+
 }
