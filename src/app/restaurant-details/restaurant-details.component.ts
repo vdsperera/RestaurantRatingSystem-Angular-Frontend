@@ -44,16 +44,22 @@ export class RestaurantDetailsComponent implements OnInit {
     let rating_data = this.rating_model.get_ratings()
     let value = (<HTMLSelectElement>document.getElementById('dishesdrop')).value;
     let restaurant_id = this.route.snapshot.paramMap.get('id')
+    let token_number = (<HTMLSelectElement>document.getElementById('token_number')).value;
     // console.log(rating_data.price_rating);
     if(value == 'null'){
       value = null
+    }
+
+    if(token_number == 'null' || token_number == null || token_number == ''){
+      console.log('get it')
+      token_number = null
     }
 
     const data = {
       data:{
         mdata:{
           "user": "vidumini",
-          "token_number": null,
+          "token_number": token_number,
           "restaurant_id": +restaurant_id,
           "dish_id": value,
           "dish_rating": rating_data.dish_rating,
@@ -64,6 +70,7 @@ export class RestaurantDetailsComponent implements OnInit {
       }
     };
     console.log(data);
+    console.log('token_number : ' + token_number);
     console.log('route param ' + this.route.snapshot.paramMap.get('id'))
   
   
