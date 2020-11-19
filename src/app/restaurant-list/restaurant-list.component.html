@@ -151,6 +151,16 @@
     </app-card>
   </ng-container>
 </div> -->
+<button mat-button (click)="openDialogWithRef(firstDialog)">Open dialog with reference</button>
+<button mat-button (click)="openOtherDialog()">Open dialog in code</button>
+
+<ng-template #firstDialog>
+  <h2 matDialogTitle>Hello, world!</h2>
+  <p matDialogContent><em>Content for this dialog goes here...</em></p>
+  <mat-dialog-actions align="end">
+    <button mat-button matDialogClose>Dismiss</button>
+  </mat-dialog-actions>
+</ng-template>
 
 <mat-form-field class="example-form-field">
   <mat-label>Clearable input</mat-label>
@@ -162,7 +172,7 @@
 
 
   <!-- <button (click)= get_restaurants_dish() mat-button>dish rating list for 2<i class="fa fa-heart"></i></button> -->
-  <button (click)= get_restaurants() mat-button>get restaurants<i class="fa fa-heart"></i></button>
+  <button (click)= get_restaurants(firstDialog) mat-button>get restaurants<i class="fa fa-heart"></i></button>
   <select name="dishes" id="dishesdrop">
     <option value="null">none</option>
     <ng-container *ngFor="let item of system_dishes">
