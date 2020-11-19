@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, TemplateRef } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs'
 import { Router } from '@angular/router'
 
@@ -12,16 +13,25 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./restaurant-list.component.css']
 })
 export class RestaurantListComponent implements OnInit {
+  @ViewChild('secondDialog') secondDialog: TemplateRef<any>;
   // restaurants$: Observable<Restaurant[]>;
   restaurants: Restaurant;
   rests: any;
   private system_dishes;
 
-  constructor(private apiService: ApiService, private router: Router) { }
+  constructor(private apiService: ApiService, private router: Router, private dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.get_restaurants();
     this.get_system_dish_list()
+  }
+
+  openDialogWithRef(ref: TemplateRef<any>) {
+    this.dialog.open(ref);
+  }
+
+  openOtherDialog() {
+    this.dialog.open(this.secondDialog);
   }
 
   public get_restaurants() {
