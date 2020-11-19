@@ -25,6 +25,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatDialogModule } from '@angular/material/dialog';
 import { StarRatingComponent } from './star-rating/star-rating.component';
 
 @NgModule({
@@ -61,6 +62,7 @@ import { StarRatingComponent } from './star-rating/star-rating.component';
     FormsModule,
     ReactiveFormsModule,
     MatSnackBarModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
