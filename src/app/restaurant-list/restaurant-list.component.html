@@ -181,6 +181,7 @@
   </select> 
 <button (click)= order_list_by_overall_rating_ase() mat-button>ASC<i class="fa fa-heart"></i></button>
 <button (click)= order_list_by_overall_rating_des() mat-button>DES<i class="fa fa-heart"></i></button>
+<button (click)= find_now() mat-button>Find<i class="fa fa-heart"></i></button>
 
 <div name='div_main' fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px grid" fxLayoutAlign="flex-start">
   <ng-container *ngFor="let restaurant of restaurants">
