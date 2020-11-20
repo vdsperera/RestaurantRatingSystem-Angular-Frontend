@@ -117,7 +117,7 @@ export class RestaurantListComponent implements OnInit {
   public questioner(x) {
     this.ar =  Array(Math.round(x));
     this.rn = Math.floor(x)
-    console.log(this.rn)
+    // console.log(this.rn)
     // return `<span class="fa fa-star checked"></span>`; 
   }
 
@@ -140,6 +140,20 @@ export class RestaurantListComponent implements OnInit {
       this.system_dishes = data['data']['dishes']
       console.log(this.system_dishes)
     });
+  }
+
+  public find_now()
+  {
+    console.log('finding')
+    let address = 'Lenny'
+    let item1 = this.restaurants.filter(i => i.address == address);
+    var result = this.restaurants.filter(item => 
+             Object.keys(item).some(k => item[k] != null && 
+             item[k].toString().toLowerCase()
+             .includes(address.toLowerCase()))
+             );
+
+    console.log(result)
   }
 
 }
