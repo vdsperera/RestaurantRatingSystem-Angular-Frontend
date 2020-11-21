@@ -27,6 +27,7 @@ import { RestaurantDetailsComponent } from './restaurant-details/restaurant-deta
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { StarRatingComponent } from './star-rating/star-rating.component';
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { StarRatingComponent } from './star-rating/star-rating.component';
     ResponsiveToolbarComponent,
     RegisterRestaurantComponent,
     RestaurantDetailsComponent,
-    StarRatingComponent
+    StarRatingComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +65,7 @@ import { StarRatingComponent } from './star-rating/star-rating.component';
     ReactiveFormsModule,
     MatSnackBarModule,
     MatDialogModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
