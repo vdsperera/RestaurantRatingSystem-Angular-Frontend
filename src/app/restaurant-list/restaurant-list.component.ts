@@ -6,6 +6,7 @@ import { Router } from '@angular/router'
 import { ApiService } from '../api.service' 
 import { Restaurant } from '../restaurant';
 import { map } from 'rxjs/operators'; 
+import { FilterPipe } from '../pipes/filter.pipe'
 
 @Component({
   selector: 'app-restaurant-list',
@@ -18,6 +19,7 @@ export class RestaurantListComponent implements OnInit {
   restaurants: Restaurant;
   rests: any;
   private system_dishes;
+  searchText = '';
 
   constructor(private apiService: ApiService, private router: Router, private dialog: MatDialog) { }
 
