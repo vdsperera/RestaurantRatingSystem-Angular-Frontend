@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api.service' 
 import { map,catchError } from 'rxjs/operators'; 
 import { DishRating } from '../dish_rating';
+import { Observable, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-restaurant-details',
