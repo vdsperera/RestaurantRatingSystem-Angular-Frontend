@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Restaurant } from './restaurant';
 import { DishRating } from './dish_rating'
-import { map } from 'rxjs/operators'; 
+import { map, catchError } from 'rxjs/operators'; 
+
 
 @Injectable({
   providedIn: 'root'
@@ -89,7 +90,8 @@ export class ApiService {
 
   public add_rating(data):Observable<any>
   {
-    return this.http.post(`${this.API_URL}/ratings/`, data);
+    return this.http.post(`${this.API_URL}/ratings/`, data)
+    .pipe( catchError( (error: Response) => throwError(`VDS_Network Error: ${error.statusText} ${error.status}`)  ) );
   }
 
   public get_dish_rating_list_for_restaurant(restaurant_id):Observable<any[]>
