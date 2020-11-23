@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,6 +28,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
 import { StarRatingComponent } from './star-rating/star-rating.component';
 import { FilterPipe } from './pipes/filter.pipe';
+import { IntercepterService } from './services/intercepter.service';
+import { ModalModule } from './_modal'
 
 @NgModule({
   declarations: [
@@ -65,9 +67,15 @@ import { FilterPipe } from './pipes/filter.pipe';
     ReactiveFormsModule,
     MatSnackBarModule,
     MatDialogModule,
+    ModalModule,
 
   ],
-  providers: [],
+  providers: [
+  {
+      provide: HTTP_INTERCEPTORS,
+      useClass: IntercepterService,
+      multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
