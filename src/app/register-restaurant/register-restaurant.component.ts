@@ -107,7 +107,10 @@ export class RegisterRestaurantComponent implements OnInit {
     		mdata:{
 			    user: "vidumini",    
 			  	name:form.value.rest_name,
-			    address: form.value.rest_city,
+			    address: {
+            street_address: form.value.rest_street,
+            city: form.value.rest_city
+          },
 			    phone_number: form.value.rest_pnumber,
 			    longitude: "23.5444",
 			    latitude: "77.5444",
