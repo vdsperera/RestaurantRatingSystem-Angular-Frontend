@@ -5,6 +5,7 @@ import { ApiService } from '../api.service'
 import { map,catchError } from 'rxjs/operators'; 
 import { DishRating } from '../dish_rating';
 import { Observable, throwError } from 'rxjs';
+import { ModalService } from '../_modal';
 
 @Component({
   selector: 'app-restaurant-details',
@@ -22,10 +23,12 @@ export class RestaurantDetailsComponent implements OnInit {
   private checked_star;
   private restaurant_dishes;
   private restaurant;
+  private body_string;
   
 
   constructor(private route: ActivatedRoute,
-    private api_service: ApiService) { }
+    private api_service: ApiService,
+    private modal_service: ModalService) { }
 
   ngOnInit(): void {
     this.get_dish_rating_list(this.route.snapshot.paramMap.get('id'))
@@ -55,7 +58,7 @@ export class RestaurantDetailsComponent implements OnInit {
       console.log('get it')
       token_number = null
     }
-
+    console.log('dish rating : ' + rating_data.dish_rating)
     const data = {
       data:{
         mdata:{
@@ -78,12 +81,13 @@ export class RestaurantDetailsComponent implements OnInit {
     this.api_service.add_rating(data).pipe(
         map(resp => resp),
         catchError(err => {
+          this.body_string = err.error.detail;
           throw err;
         })
     )
     .subscribe(
       resp => console.log(resp),
-      err => console.log(err)
+      err => window.alert(this.body_string)
     );
   }
 
