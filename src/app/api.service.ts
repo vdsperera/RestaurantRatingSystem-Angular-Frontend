@@ -116,6 +116,16 @@ export class ApiService {
   {
     return this.http.get(`${this.API_URL}/dishes/`);
   }
+
+  // public get_contributors_list():Observable<any>
+  // {
+  //   return this.http.get(`${this.API_URL}/contributions/list?fromdate=2020-11-01&todate=2020-12-01`)
+  // }
+
+  public get_contributors_list(from_date, to_date):Observable<any>
+  {
+    return this.http.get(`${this.API_URL}/contributions/list?fromdate=${from_date}&todate=${to_date}`)
+  }
       
 
 }
