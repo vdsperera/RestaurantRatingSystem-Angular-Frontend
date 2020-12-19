@@ -29,7 +29,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { StarRatingComponent } from './star-rating/star-rating.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { IntercepterService } from './services/intercepter.service';
-import { ModalModule } from './_modal'
+import { ModalModule } from './_modal';
+import { ContributorsComponent } from './contributors/contributors.component'
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ModalModule } from './_modal'
     RestaurantDetailsComponent,
     StarRatingComponent,
     FilterPipe,
+    ContributorsComponent,
   ],
   imports: [
     BrowserModule,
