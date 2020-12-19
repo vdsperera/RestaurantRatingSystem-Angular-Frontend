@@ -18,28 +18,28 @@ export class ResponsiveToolbarComponent implements OnInit {
       route: ''
     },
     {
-      label: 'Showcase',
-      icon: 'slideshow',
-      showOnMobile: false,
-      showOnTablet: false,
-      showOnDesktop: true,
-      route: ''
-    },
-    {
-      label: 'Docs',
-      icon: 'notes',
-      showOnMobile: false,
-      showOnTablet: true,
-      showOnDesktop: true,
-      route: ''
-    },
-    {
       label: 'Add Restaurant',
       icon: 'add_circle',
       showOnMobile: false,
       showOnTablet: false,
       showOnDesktop: true,
       route: '/registerrestaurant'
+    },
+    {
+      label: 'Contributors',
+      icon: 'notes',
+      showOnMobile: false,
+      showOnTablet: true,
+      showOnDesktop: true,
+      route: '/contributors'
+    },
+    {
+      label: 'Showcase',
+      icon: 'slideshow',
+      showOnMobile: false,
+      showOnTablet: false,
+      showOnDesktop: true,
+      route: ''
     },
     {
       label: 'About',
