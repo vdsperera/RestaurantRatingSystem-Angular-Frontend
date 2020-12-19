@@ -1,19 +1,12 @@
 
+<!--
 <div class='rating'>
-<!-- 	<mat-form-field> -->
-<!-- 	<mat-select class='mat-select-dish' name="user_role" ngModel placeholder='Dish'>
-		<mat-option class='mat-option-dish' value="Kottu">Kottu</mat-option>		  	
-		<mat-option class='mat-option-dish' value="Fried Rice">Fried Rice</mat-option>
-		<mat-option class='mat-option-dish' value="Chopsey Rice">Chopsey Rice</mat-option>
-	</mat-select>
-	<br> -->
 	<select name="dishes" id="dishesdrop">
 		<option value="null">none</option>
 		<ng-container *ngFor="let item of restaurant_dishes">
 			<option value={{item.dish_id}}>{{item.dish_name}}</option>
 		</ng-container>  
 	</select>	
-<!-- 	</mat-form-field> -->
 	<br>
 	<app-star-rating (rating_model_event) = "rating_event_hander($event)"></app-star-rating>
 	<br>
@@ -22,26 +15,6 @@
 	<button mat-raised-button color="primary" (click)=submit()>Submit</button>
 	<div>
 		<ul style="list-style-type:none;">
-<!--		<li>
-		Dish 01
-		<span class="fa fa-star checked"></span>			
-		</li>
-		<li>
-		Dish 02
-		<span class="fa fa-star checked"></span>
-		<span class="fa fa-star checked"></span>
-		<span class="fa fa-star checked"></span>			
-		</li>
-		<li>
-		Dish 03
-		<span class="fa fa-star checked"></span>
-		<span class="fa fa-star checked"></span>			
-		</li>
-		<li>
-		Dish 04
-		<span class="fa fa-star checked"></span>			
-		</li>
--->
 		<ng-container *ngFor="let item of dish_rating_list">
 			{{set_star_rating(item.overall_rating)}}
 			<li>{{item.dish_name}}
@@ -60,3 +33,120 @@
 </jw-modal>
 
 </div>
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="restaurant-details.component.css">
+	<title></title>
+</head>
+	<body>
+		<div class="wrapper">
+			<div id="r1c1" class="box">
+				<label>{{restaurant.restaurant_name}}</label><br>
+				   <span>
+						{{set_overall_star_rating(restaurant.overall_rating)}}
+						<span *ngFor="let item of overall_checked_star_array()"><span class="fa fa-star checked"></span></span>
+						<span *ngFor="let item of overall_star_array()"><span class="fa fa-star"></span></span>		
+						{{restaurant_overall_rating}}   	
+				   </span> ({{restaurant.total_no_of_ratings}} reviews)<br>
+				   <label>{{restaurant.address}}</label>
+				   <label> {{restaurant.phone_number}}</label>
+				   <label> www.brre.com</label>
+				   <br>
+				   <img src="assets/images/restaurant.jpg">
+			</div>
+			<div id="r1c2" class="box">
+				<label>Location</label><br>
+				<img src="assets/images/map.jpg">
+			</div>
+			<div id="r2c1" class="box">
+				<label>Ratings</label><br><br>
+				<span>
+					
+				</span>
+				{{set_overall_star_rating(restaurant.overall_rating)}}
+				{{set_rating_dish_rating(restaurant.dish_rating)}}
+				{{set_rating_price_rating(restaurant.price_rating)}}
+				{{set_rating_service_rating(restaurant.service_rating)}}
+				<span class="rate">Overall Rating</span>
+				   <span class="tst">
+						<span *ngFor="let item of overall_checked_star_array()"><span class="fa fa-star checked"></span></span>
+						<span *ngFor="let item of overall_star_array()"><span class="fa fa-star"></span></span>				   	
+				   </span><br>
+				<span class="rate">Dish Rating</span>
+				   <span class="tst">
+						<span *ngFor="let item of rating_dish_checked_star_array()"><span class="fa fa-star checked"></span></span>
+						<span *ngFor="let item of rating_dish_star_array()"><span class="fa fa-star"></span></span>	
+				   </span><br>
+				<span class="rate">Price Rating</span>
+				   <span class="tst">
+						<span *ngFor="let item of rating_price_checked_star_array()"><span class="fa fa-star checked"></span></span>
+						<span *ngFor="let item of rating_price_star_array()"><span class="fa fa-star"></span></span>	
+				   </span><br>
+				<span class="rate">Service Rating</span>
+				   <span class="tst">
+						<span *ngFor="let item of rating_service_checked_star_array()"><span class="fa fa-star checked"></span></span>
+						<span *ngFor="let item of rating_service_star_array()"><span class="fa fa-star"></span></span>				   	
+				   </span><br>
+			</div>
+			<div id="r2c2" class="box">
+				<label>Dishes</label><br><br>
+				<div>
+					<ul style="list-style-type:none;">
+					<ng-container *ngFor="let item of dish_rating_list">
+						{{set_star_rating(item.overall_rating)}}
+						<li>{{item.dish_name}}
+						<span *ngFor="let item of checked_star_array()"><span class="fa fa-star checked"></span></span>
+						<span *ngFor="let item of star_array()"><span class="fa fa-star"></span></span>
+						{{checked_star}}
+						</li>
+					</ng-container>
+					</ul>
+				</div>
+			</div>
+			<div id="r3c1" class="box">
+				<label>Reviews</label><br><br>
+				<div class="review-wrapper">
+					<ng-container *ngFor="let item of restaurant.ratings">
+						<div class="pro-pic">
+								<img class="pro-pic-image" src="assets/images/pro.jpg">
+								<label>{{item.added_by}}</label>
+						</div>
+						<div class="review">
+							<span id="rating">
+								{{set_star_rating(item.overall_rating)}}
+								<span *ngFor="let item of checked_star_array()"><span class="fa fa-star checked"></span></span>
+								<span *ngFor="let item of star_array()"><span class="fa fa-star"></span></span>
+								{{item.overall_rating}}
+							</span><br>
+							<span id="msg">
+								Wonderful Experience
+							</span>
+						</div>
+						<div class="other">
+							<span>{{item.created_on}}</span><br>
+							<span> up</span>
+							<span> down</span>
+						</div>
+					</ng-container>
+				</div>
+			</div>
+			<div id="r3c2" class="box">
+				<label>Set Ratings</label><br><br>
+				<select name="dishes" id="dishesdrop">
+					<option value="null">none</option>
+					<ng-container *ngFor="let item of restaurant_dishes">
+						<option value={{item.dish_id}}>{{item.dish_name}}</option>
+					</ng-container>  
+				</select>	
+				<br>
+				<app-star-rating (rating_model_event) = "rating_event_hander($event)"></app-star-rating>
+				<br>
+				<label for="Token">Token</label>
+				<input type="text" name="token_number" id="token_number">
+				<button mat-raised-button color="primary" (click)=submit()>Submit</button>
+			</div>
+		</div>
+	</body>
+</html>
