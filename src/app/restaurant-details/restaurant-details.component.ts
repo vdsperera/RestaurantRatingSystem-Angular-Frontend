@@ -19,10 +19,21 @@ export class RestaurantDetailsComponent implements OnInit {
   public rating_array = [];
   public rating_model = new Rating;
   public dish_rating_list;
+  public restaurant_overall_rating;
   private star;
   private checked_star;
+  private overall_star;
+  private overall_checked_star;
+
+  private rating_dish_star;
+  private rating_dish_checked_star;
+  private rating_price_star;
+  private rating_price_checked_star;
+  private rating_service_star;
+  private rating_service_checked_star;
+
   private restaurant_dishes;
-  private restaurant;
+  public restaurant;
   private body_string;
   
 
@@ -96,7 +107,10 @@ export class RestaurantDetailsComponent implements OnInit {
    this.api_service.get_restaurant(restaurant_id)
    .subscribe((data) => {
      this.restaurant_dishes = data['data']['dishes']
-     console.log(this.restaurant_dishes)
+     this.restaurant = data['data']
+     this.restaurant_overall_rating =  Math.round(data['data']['overall_rating'] * 10) / 10
+     // console.log(this.restaurant_dishes)
+     console.log(this.restaurant)
    });     
   }
 
@@ -114,6 +128,11 @@ export class RestaurantDetailsComponent implements OnInit {
   {
     this.checked_star = Math.floor(x);
     this.star = (5 - Math.floor(x))
+    console.log('full', x)
+    console.log('checked star', this.checked_star)
+    console.log('star', this.star)
+    console.log('half star', x%1)
+
   }
 
   checked_star_array(x)
@@ -124,6 +143,76 @@ export class RestaurantDetailsComponent implements OnInit {
   star_array()
   {
     return Array(this.star)
+  }
+
+  set_overall_star_rating(x)
+  {
+    this.overall_checked_star = Math.floor(x);
+    this.overall_star = (5 - Math.floor(x));
+  }
+
+
+  overall_checked_star_array(x)
+  {
+    return Array(this.checked_star)
+  }
+
+  overall_star_array()
+  {
+    return Array(this.star)
+  }
+
+
+  set_rating_dish_rating(x)
+  {
+    // var x = this.restaurant.dish_rating;
+    this.rating_dish_checked_star = Math.floor(x);
+    this.rating_dish_star = (5 - Math.floor(x));
+  }
+
+  set_rating_price_rating(x)
+  {
+    // var x = this.restaurant.price_rating;
+    this.rating_price_checked_star = Math.floor(x);
+    this.rating_price_star = (5 - Math.floor(x));    
+  }
+
+  set_rating_service_rating(x)
+  {
+    // var x = this.restaurant.service_rating;
+    this.rating_service_checked_star = Math.floor(x);
+    this.rating_service_star = (5 - Math.floor(x));    
+  }
+
+
+  rating_dish_checked_star_array()
+  {
+    return Array(this.rating_dish_checked_star)
+  }
+
+  rating_dish_star_array()
+  {
+    return Array(this.rating_dish_star)
+  }
+
+  rating_price_checked_star_array()
+  {
+    return Array(this.rating_price_checked_star)
+  }
+
+  rating_price_star_array()
+  {
+    return Array(this.rating_price_star)
+  }
+
+  rating_service_checked_star_array()
+  {
+    return Array(this.rating_service_checked_star)
+  }
+
+  rating_service_star_array()
+  {
+    return Array(this.rating_service_star)
   }
 
 
