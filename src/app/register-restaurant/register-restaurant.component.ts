@@ -105,7 +105,7 @@ export class RegisterRestaurantComponent implements OnInit {
     const data = {
     	data:{
     		mdata:{
-			    user: "vidumini",    
+			    user: "asanka",    
 			  	name:form.value.rest_name,
 			    address: {
             street_address: form.value.rest_street,

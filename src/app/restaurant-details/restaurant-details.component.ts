@@ -73,7 +73,7 @@ export class RestaurantDetailsComponent implements OnInit {
     const data = {
       data:{
         mdata:{
-          "user": "vidumini",
+          "user": "asanka",
           "token_number": token_number,
           "restaurant_id": +restaurant_id,
           "dish_id": value,
