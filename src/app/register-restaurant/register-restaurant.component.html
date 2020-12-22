@@ -179,6 +179,13 @@ mat-select-value {
     		<input formControlName='rest_zip_code'  name="rest_zip_code" matInput type="text" ngModel />			
 		</mat-form-field>		
 		<br>
+		<mat-form-field appearance="fill">
+		  <mat-label>Dishes</mat-label>
+		  <mat-select formControlName='dishes' multiple>
+		    <mat-option *ngFor="let dish of dish_list" [value]="dish">{{dish.dish_name}}</mat-option>
+		  </mat-select>
+		</mat-form-field>
+		<br>
 		<div class="row">
 			<div id="hotel_map" class="hotel_map"></div>
 		</div>	
