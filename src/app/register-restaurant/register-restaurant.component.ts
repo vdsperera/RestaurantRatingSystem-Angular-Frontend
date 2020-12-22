@@ -49,8 +49,10 @@ export class RegisterRestaurantComponent implements OnInit {
 	  rest_email: new FormControl('', Validators.email),
 	  rest_street: new FormControl(''),
 	  rest_city: new FormControl('', Validators.required),
-	  rest_zip_code: new FormControl('')
+	  rest_zip_code: new FormControl(''),
+    dishes: new FormControl(null)
   	});
+  // toppings= new FormControl('')
 
   // user_role: string;
   // rest_name: string;
@@ -59,6 +61,10 @@ export class RegisterRestaurantComponent implements OnInit {
   // rest_latitude: string;
   // rest_pnumber: string;
   // map: Map
+
+  
+  dish_list: string[] = ['Extra cheese', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
+
   mp: Map;
 
   mouse_position = new olControl.MousePosition({
@@ -94,14 +100,24 @@ export class RegisterRestaurantComponent implements OnInit {
     });  	
 
     this.mp.addControl(this.mouse_position);
+    this.get_system_dish_list()
   }
-
   
 
   onSubmit(form: NgForm)
   {
-    console.log(form.value.user_role);
 
+    // const data = {
+    //   data:{
+    //     mdata:{
+    //       user: "asanka",    
+    //       dishes: this.rest_register_form.controls['dishes'].value
+    //     }
+    //   }
+    // };
+
+    // console.log(data);
+   
     const data = {
     	data:{
     		mdata:{
@@ -114,7 +130,8 @@ export class RegisterRestaurantComponent implements OnInit {
 			    phone_number: form.value.rest_pnumber,
 			    longitude: "23.5444",
 			    latitude: "77.5444",
-			    role: form.value.user_role
+			    role: form.value.user_role,
+          dishes: this.rest_register_form.controls['dishes'].value
     		}
     	}
     };
@@ -132,6 +149,7 @@ export class RegisterRestaurantComponent implements OnInit {
     // console.log(typeof(JSON.stringify(this.model)))
 
     //this.restaurants$ = this.api_service.get_restaurants();
+
     this.api_service.register_restaurant2(data).pipe(
         map(resp => resp),
         catchError(err => {
@@ -142,7 +160,8 @@ export class RegisterRestaurantComponent implements OnInit {
       resp => console.log(resp),
       err => console.log(err)
     );
-    //this.map.addControl(this.mouse_position);
+
+    // this.map.addControl(this.mouse_position);
 
   }
 
@@ -153,6 +172,14 @@ export class RegisterRestaurantComponent implements OnInit {
   handleFileInput(files: FileList)
   {
   	this.fileToUpload = files.item(0);
+  }
+
+  public get_system_dish_list()
+  {
+    this.api_service.get_system_dish_list()
+    .subscribe((data) => {
+      this.dish_list = data['data']['dishes']
+    });
   }
 
 }
