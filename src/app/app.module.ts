@@ -23,9 +23,11 @@ import { MatFormFieldModule } from '@angular/material/form-field'
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatPaginatorModule } from '@angular/material/paginator';
 import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatDialogModule } from '@angular/material/dialog';
+import {NgxPaginationModule} from 'ngx-pagination';
 import { StarRatingComponent } from './star-rating/star-rating.component';
 import { FilterPipe } from './pipes/filter.pipe';
 import { IntercepterService } from './services/intercepter.service';
@@ -70,6 +72,8 @@ import { ContributorsComponent } from './contributors/contributors.component'
     MatSnackBarModule,
     MatDialogModule,
     ModalModule,
+    MatPaginatorModule,
+    NgxPaginationModule,
 
   ],
   providers: [
