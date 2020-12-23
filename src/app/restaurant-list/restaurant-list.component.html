@@ -185,7 +185,7 @@
 <input [(ngModel)]="searchText" placeholder="search text goes here"><br>
 
 <div name='div_main' fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px grid" fxLayoutAlign="flex-start">
-  <ng-container *ngFor="let restaurant of restaurants | appFilter : searchText">
+  <ng-container *ngFor="let restaurant of restaurants | paginate: { itemsPerPage: 10, currentPage: p } |  appFilter : searchText">
     <app-card fxFlex="0 1 calc(20% - 32px)" fxFlex.lt-md="0 1 calc(50% - 32px)" fxFlex.lt-sm="100%">
       <mat-card>
         <mat-card-header>
@@ -212,6 +212,9 @@
     </app-card>  
   </ng-container>
 </div>
+
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
+
 
 <!-- <body>
 <div fxLayout="row wrap" fxLayout.lt-sm="column" fxLayoutGap="32px grid" fxLayoutAlign="flex-start">
