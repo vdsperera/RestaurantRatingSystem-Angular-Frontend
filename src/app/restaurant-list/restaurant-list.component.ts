@@ -8,6 +8,9 @@ import { Restaurant } from '../restaurant';
 import { map } from 'rxjs/operators'; 
 import { FilterPipe } from '../pipes/filter.pipe'
 
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
+
 @Component({
   selector: 'app-restaurant-list',
   templateUrl: './restaurant-list.component.html',
@@ -25,7 +28,7 @@ export class RestaurantListComponent implements OnInit {
 
   ngOnInit(): void {
     this.get_restaurants();
-    this.get_system_dish_list()
+    this.get_system_dish_list();
   }
 
   openDialogWithRef(ref: TemplateRef<any>) {
