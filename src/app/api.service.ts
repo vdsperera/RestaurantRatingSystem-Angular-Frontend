@@ -114,7 +114,11 @@ export class ApiService {
 
   public get_system_dish_list():Observable<any>
   {
-    return this.http.get(`${this.API_URL}/dishes/`);
+    if(this.type == 0)
+      return this.http.get(`${this.API_URL}/dishes/`);
+    if(this.type == 1)
+      return this.http.get(`/assets/sample_responses/get_system_dish_list/get_system_dish_list.json`);
+
   }
 
   // public get_contributors_list():Observable<any>
