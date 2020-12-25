@@ -117,3 +117,22 @@ div button{
   margin: 20px;
   background-color: #FFF2E0; }
 
+.mat-select {
+    background: white;
+    width: 100px;
+}
+
+.mat-card-subtitle
+{
+  height: 50px;
+}
+
+#search-area
+{
+  display: flex;
+}
+
+#search-area > input
+{
+  margin-right: 5px;
+}
