@@ -33,6 +33,7 @@ import { FilterPipe } from './pipes/filter.pipe';
 import { IntercepterService } from './services/intercepter.service';
 import { ModalModule } from './_modal';
 import { ContributorsComponent } from './contributors/contributors.component'
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -74,6 +75,7 @@ import { ContributorsComponent } from './contributors/contributors.component'
     ModalModule,
     MatPaginatorModule,
     NgxPaginationModule,
+    NoopAnimationsModule,
 
   ],
   providers: [
