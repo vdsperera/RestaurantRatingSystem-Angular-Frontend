@@ -33,8 +33,9 @@
 }
 
 html, body {
-    overflow-x: hidden;
-    overflow-y: auto;
+/*    overflow-x: visible;
+    overflow-y: visible;*/
+    scrollbar-width: none;
     margin-left: 1%;
     margin-right: 1%;
 }
@@ -135,4 +136,17 @@ div button{
 #search-area > input
 {
   margin-right: 5px;
+}
+
+
+.fa-check-circle
+{
+  color: green;
+}
+
+.card-actions
+{
+  display: flex;
+/*  background:  #900C3F;*/
+/*  justify-content: center;*/
 }
