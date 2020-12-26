@@ -47,8 +47,8 @@ export class ApiService {
     if(this.type == 0)
         return this.http.get<Restaurant[]>(`${this.API_URL}/restaurants/${restaurant_id}`)
     if(this.type == 1)
-        return this.http.get<Restaurant[]>(`${this.API_URL}/restaurants/${restaurant_id}`)
-        // return this.http.get<Restaurant[]>(`/assets/sample_responses/get_restaurant_list/restaurant_list.json`);
+        // return this.http.get<Restaurant[]>(`${this.API_URL}/restaurants/${restaurant_id}`)
+        return this.http.get<Restaurant[]>(`/assets/sample_responses/get_restaurant_list/restaurant_list.json`);
   }
   
   // test
