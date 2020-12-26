@@ -87,7 +87,7 @@ export class RegisterRestaurantComponent implements OnInit {
   ngOnInit(): void {
   	// this.restaurants$ = this.api_service.get_restaurants();
     this.mp = new Map({
-      target: 'hotel_map',
+      target: 'map',
       layers: [
         new TileLayer({
           source: new OSM()
