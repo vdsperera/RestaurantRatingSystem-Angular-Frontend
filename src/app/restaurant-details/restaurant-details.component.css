@@ -109,15 +109,22 @@
 
 .pro-pic
 {
-  border : 2px solid black;
-  width: 150px;
-  height: 72px;
+  /*border : 2px solid black;*/
+/*  width: 150px;
+  height: 72px;*/
+  display: flex;
 
+}
+
+.pro-pic > label
+{
+  margin-top: 28px;
+  margin-left: 20px;
 }
 
 .pro-pic-image
 {
-  border : 2px solid black;
+  border : 2px solid white;
   width: 72px;
   height: 72px;
   border-radius: 72px;
@@ -135,4 +142,15 @@
   padding: 5px;
   border : 2px solid black;
   float: left;  
+}
+
+.fa-check-circle
+{
+  color: green;
+}
+
+#rest_img
+{
+  height: 400px;
+  width: 600px;  
 }

@@ -43,7 +43,7 @@
 	<body>
 		<div class="wrapper">
 			<div id="r1c1" class="box">
-				<label>{{restaurant.restaurant_name}}</label><br>
+				<label>{{restaurant.restaurant_name}} <span *ngIf="restaurant.claimed_by!=null"><i class="fa fa-check-circle"></i></span></label><br>
 				   <span>
 						{{set_overall_star_rating(restaurant.overall_rating)}}
 						<span *ngFor="let item of overall_checked_star_array()"><span class="fa fa-star checked"></span></span>
@@ -54,7 +54,7 @@
 				   <label> {{restaurant.phone_number}}</label>
 				   <label> www.brre.com</label>
 				   <br>
-				   <img src="assets/images/restaurant.jpg">
+				   <img id="rest_img" src="/assets/images/{{ restaurant.restaurant_name }}.jpg" alt="Photo of a Shiba Inu" onerror="this.src='/assets/images/rest_samp.jpg'">
 			</div>
 			<div id="r1c2" class="box">
 				<label>Location</label><br>
@@ -119,6 +119,7 @@
 								<span *ngFor="let item of checked_star_array()"><span class="fa fa-star checked"></span></span>
 								<span *ngFor="let item of star_array()"><span class="fa fa-star"></span></span>
 								{{item.overall_rating}}
+								<span *ngIf="item.verified==1"><i class="fa fa-check-circle"></i></span>
 							</span><br>
 							<span id="msg">
 								Wonderful Experience
@@ -126,8 +127,8 @@
 						</div>
 						<div class="other">
 							<span>{{item.created_on}}</span><br>
-							<span> up</span>
-							<span> down</span>
+							<span><button mat-button><i class="fa fa-thumbs-up fa-sm"></i></button></span>
+							<span><button mat-button><i class="fa fa-thumbs-down fa-sm"></i></button></span>
 						</div>
 					</ng-container>
 				</div>
