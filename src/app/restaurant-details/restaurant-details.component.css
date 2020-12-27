@@ -140,6 +140,12 @@
   /*border : 2px solid black; */
 }
 
+#review-message
+{
+  height: 140px;
+  width: 300px;
+}
+
 .other
 {
   padding: 5px;

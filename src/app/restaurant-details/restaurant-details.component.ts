@@ -60,7 +60,9 @@ export class RestaurantDetailsComponent implements OnInit {
     let value = (<HTMLSelectElement>document.getElementById('dishesdrop')).value;
     let restaurant_id = this.route.snapshot.paramMap.get('id')
     let token_number = (<HTMLSelectElement>document.getElementById('token_number')).value;
+    let review_message = (<HTMLSelectElement>document.getElementById('review-message')).value;
     // console.log(rating_data.price_rating);
+    console.log('review_message ', review_message)
     if(value == 'null'){
       value = null
     }
@@ -69,7 +71,7 @@ export class RestaurantDetailsComponent implements OnInit {
       console.log('get it')
       token_number = null
     }
-    console.log('dish rating : ' + rating_data.dish_rating)
+    // console.log('dish rating : ' + rating_data.dish_rating)
     const data = {
       data:{
         mdata:{
@@ -80,13 +82,13 @@ export class RestaurantDetailsComponent implements OnInit {
           "dish_rating": rating_data.dish_rating,
           "price_rating": rating_data.price_rating,
           "service_rating": rating_data.service_rating, 
-          "review": "Good experience"
+          "review": review_message
         }
       }
     };
-    console.log(data);
-    console.log('token_number : ' + token_number);
-    console.log('route param ' + this.route.snapshot.paramMap.get('id'))
+    // console.log(data);
+    // console.log('token_number : ' + token_number);
+    // console.log('route param ' + this.route.snapshot.paramMap.get('id'))
   
   
     this.api_service.add_rating(data).pipe(
@@ -110,7 +112,7 @@ export class RestaurantDetailsComponent implements OnInit {
      this.restaurant = data['data']
      this.restaurant_overall_rating =  Math.round(data['data']['overall_rating'] * 10) / 10
      // console.log(this.restaurant_dishes)
-     console.log(this.restaurant)
+     // console.log(this.restaurant)
    });     
   }
 
@@ -128,10 +130,10 @@ export class RestaurantDetailsComponent implements OnInit {
   {
     this.checked_star = Math.floor(x);
     this.star = (5 - Math.floor(x))
-    console.log('full', x)
-    console.log('checked star', this.checked_star)
-    console.log('star', this.star)
-    console.log('half star', x%1)
+    // console.log('full', x)
+    // console.log('checked star', this.checked_star)
+    // console.log('star', this.star)
+    // console.log('half star', x%1)
 
   }
 

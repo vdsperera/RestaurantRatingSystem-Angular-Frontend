@@ -144,7 +144,8 @@
 				<br>
 				<app-star-rating (rating_model_event) = "rating_event_hander($event)"></app-star-rating>
 				<br>
-				<label for="Token">Token</label>
+				<textarea id="review-message" placeholder="write your review here"></textarea><br><br>
+				<label for="Token">Token </label>
 				<input type="text" name="token_number" id="token_number">
 				<button mat-raised-button color="primary" (click)=submit()>Submit</button>
 			</div>
