@@ -99,7 +99,7 @@ export class RestaurantDetailsComponent implements OnInit {
         })
     )
     .subscribe(
-      resp => console.log(resp),
+      resp => window.alert("Added Successfully"),
       err => window.alert(this.body_string)
     );
   }
