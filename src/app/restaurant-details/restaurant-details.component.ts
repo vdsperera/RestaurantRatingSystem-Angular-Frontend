@@ -6,6 +6,21 @@ import { map,catchError } from 'rxjs/operators';
 import { DishRating } from '../dish_rating';
 import { Observable, throwError } from 'rxjs';
 import { ModalService } from '../_modal';
+import Map from 'ol/Map';
+import View from 'ol/View';
+import VectorLayer from 'ol/layer/Vector';
+import Style from 'ol/style/Style';
+import Icon from 'ol/style/Icon';
+import OSM from 'ol/source/OSM';
+import Vector from 'ol/layer/Vector';
+import Feature from 'ol/Feature';
+import Point from 'ol/geom/Point';
+import VectorSource from 'ol/source/Vector';
+import Tile from 'ol/Tile';
+import * as olProj from 'ol/proj';
+import * as olControl from 'ol/control'
+import TileLayer from 'ol/layer/Tile';
+import * as olCoordinate from 'ol/coordinate';
 
 @Component({
   selector: 'app-restaurant-details',
@@ -35,6 +50,8 @@ export class RestaurantDetailsComponent implements OnInit {
   private restaurant_dishes;
   public restaurant;
   private body_string;
+
+  mp: Map;
   
 
   constructor(private route: ActivatedRoute,
@@ -44,12 +61,27 @@ export class RestaurantDetailsComponent implements OnInit {
   ngOnInit(): void {
     this.get_dish_rating_list(this.route.snapshot.paramMap.get('id'))
     this.get_restaurant(this.route.snapshot.paramMap.get('id'))
+
+    this.mp = new Map({
+      target: 'map',
+      layers: [
+        new TileLayer({
+          source: new OSM()
+        })
+      ],
+      view: new View({
+        center: olProj.fromLonLat([80.138088, 6.203364]),
+        zoom: 10
+      })
+    }); 
+    console.log('Location')
+    // this.addPoint(this.restaurant.longitude, this.restaurant.longitude);
   }
 
   rating_event_hander($event: any)
   {
     this.rating_model = $event;
-    console.log('even emitter');
+    // console.log('even emitter');
     
   }
 
@@ -68,7 +100,7 @@ export class RestaurantDetailsComponent implements OnInit {
     }
 
     if(token_number == 'null' || token_number == null || token_number == ''){
-      console.log('get it')
+      // console.log('get it')
       token_number = null
     }
     // console.log('dish rating : ' + rating_data.dish_rating)
@@ -112,7 +144,12 @@ export class RestaurantDetailsComponent implements OnInit {
      this.restaurant = data['data']
      this.restaurant_overall_rating =  Math.round(data['data']['overall_rating'] * 10) / 10
      // console.log(this.restaurant_dishes)
-     // console.log(this.restaurant)
+     // console.log('restaurant', this.restaurant)
+    // console.log('Long ', this.restaurant.logitude)
+    // console.log('Lati ', this.restaurant.latitude)
+     // this.addPoint(6.19343, 80.14379);
+     this.addPoint(this.restaurant.logitude, this.restaurant.latitude);
+
    });     
   }
 
@@ -217,6 +254,23 @@ export class RestaurantDetailsComponent implements OnInit {
     return Array(this.rating_service_star)
   }
 
-
+  addPoint(lat: number, lng: number) {
+      var vectorLayer = new Vector({
+        source: new VectorSource({
+          features: [new Feature({
+            geometry: new Point(olProj.transform([lng, lat], 'EPSG:4326', 'EPSG:3857')),
+          })]
+        }),
+        style: new Style({
+          image: new Icon({
+            anchor: [0.5, 0.5],
+            anchorXUnits: "fraction",
+            anchorYUnits: "fraction",
+            src: "/assets/images/marker.png"
+          })
+        })
+      });
+      this.mp.addLayer(vectorLayer);
+    }
 
 }
