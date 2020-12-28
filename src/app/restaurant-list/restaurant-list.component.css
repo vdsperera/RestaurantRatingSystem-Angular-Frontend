@@ -27,9 +27,15 @@
   color: orange;
 }
 
+.mat-card-image 
+{
+ /* height: 200px;*/
+}
+
 .img {
   height: 200px;
   width: 300px;
+  max-height: 200px;
 }
 
 html, body {
