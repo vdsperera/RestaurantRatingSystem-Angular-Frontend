@@ -157,8 +157,8 @@ export class RegisterRestaurantComponent implements OnInit {
         })
     )
     .subscribe(
-      resp => console.log(resp),
-      err => console.log(err)
+      resp => window.alert("Added Successfully"),
+      err => window.alert(err.error.detail)
     );
 
     // this.map.addControl(this.mouse_position);
