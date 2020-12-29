@@ -128,8 +128,8 @@ export class RegisterRestaurantComponent implements OnInit {
             city: form.value.rest_city
           },
 			    phone_number: form.value.rest_pnumber,
-			    longitude: "23.5444",
-			    latitude: "77.5444",
+			    longitude: "6.0007",
+			    latitude: "80.3352",
 			    role: form.value.user_role,
           dishes: this.rest_register_form.controls['dishes'].value
     		}
