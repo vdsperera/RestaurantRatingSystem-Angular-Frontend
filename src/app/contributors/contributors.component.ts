@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-contributors',
@@ -27,7 +28,7 @@ export class ContributorsComponent implements OnInit {
 
   public month_all()
   {
-
+    this.find()
 
   }
 
@@ -46,9 +47,14 @@ export class ContributorsComponent implements OnInit {
     console.log('this year', y)
     // console.log('days', days)
 
-    let first_day = new Date(y, n, 1);
+    // let first_day = new Date(y, n, 1);
+    // let first_day_string = first_day.toString()
+    // let last_day = new Date(y, n+1, 0);
+    // let last_day_string = last_day.toString()
+
+    let first_day = formatDate(new Date(y, n, 1), 'yyyy-MM-dd', 'en_US')
     let first_day_string = first_day.toString()
-    let last_day = new Date(y, n+1, 0);
+    let last_day = formatDate(new Date(y, n+1, 0), 'yyyy-MM-dd', 'en_US')
     let last_day_string = last_day.toString()
 
     console.log('first day', first_day_string)
@@ -76,9 +82,14 @@ export class ContributorsComponent implements OnInit {
     console.log('this year', y)
     // console.log('days', days)
 
-    let first_day = new Date(y, n-1, 1);
+    // let first_day = new Date(y, n-1, 1);
+    // let first_day_string = first_day.toString()
+    // let last_day = new Date(y, n, 0);
+    // let last_day_string = last_day.toString()
+
+    let first_day = formatDate(new Date(y, n-1, 1), 'yyyy-MM-dd', 'en_US')
     let first_day_string = first_day.toString()
-    let last_day = new Date(y, n, 0);
+    let last_day = formatDate(new Date(y, n, 0), 'yyyy-MM-dd', 'en_US')
     let last_day_string = last_day.toString()
 
     console.log('first day', first_day_string)
