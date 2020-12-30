@@ -116,12 +116,26 @@
 								<label>{{item.added_by}}</label>
 						</div>
 						<div class="review">
-							<span id="rating">
+							<span class="rating">
 								{{set_star_rating(item.overall_rating)}}
-								<span *ngFor="let item of checked_star_array()"><span class="fa fa-star checked"></span></span>
-								<span *ngFor="let item of star_array()"><span class="fa fa-star"></span></span>
-								{{item.overall_rating}}
-								<span *ngIf="item.verified==1"><i class="fa fa-check-circle"></i></span>
+								<span class="rating-info">
+									<span class="rating-star">
+										<span class="star-label">
+											<span class="s" *ngFor="let item of checked_star_array()"><span class="fa fa-star checked"></span></span>
+											<span class="cs" *ngFor="let item of star_array()"><span class="fa fa-star"></span></span>	
+										</span>
+									<span class="rating-value">
+										{{item.overall_rating}}
+									</span>
+									
+									</span>
+									
+									<span class="verify" *ngIf="item.verified==1"><i class="fa fa-check-circle"></i></span>
+								</span>
+								
+								<span class="dish_name" *ngIf="item.dish_name!=null">{{item.dish_name}}</span>
+								
+
 							</span><br>
 							<span id="msg">
 								{{item.review}}

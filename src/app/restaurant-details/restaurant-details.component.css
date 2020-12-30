@@ -146,6 +146,12 @@
   width: 300px;
 }
 
+.dish_name
+{
+  background-color: #e7e7e7;
+  color: black;
+}
+
 .other
 {
   padding: 5px;
@@ -168,4 +174,42 @@
 .map {
     height: 500px;
     width: 500px;
+}
+
+
+.rating
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.rating > span
+{
+  margin-right: 5px;
+  /*min-width: 30px;*/
+  /*background-color: red;*/
+}
+
+.rating-star
+{
+  /*margin-right: 5px;*/
+/*  min-width: 100px;
+  max-width: 100px;*/
+/*  display: inline-block;*/
+}
+
+.star-label
+{
+  margin-right: 5px;
+/*  min-width: 100px;
+  max-width: 100px;*/
+/*  display: inline-block;*/
+}
+
+.rating-value
+{
+  margin-right: 5px;
+  min-width: 20px;
+  max-width: 20px;
+  display: inline-block;  
 }
