@@ -191,7 +191,7 @@ export class RestaurantDetailsComponent implements OnInit {
   }
 
 
-  overall_checked_star_array(x)
+  overall_checked_star_array()
   {
     return Array(this.overall_checked_star)
   }
