@@ -21,7 +21,7 @@ export class RestaurantListComponent implements OnInit {
   // restaurants$: Observable<Restaurant[]>;
   restaurants: Restaurant;
   rests: any;
-  private system_dishes;
+  public system_dishes;
   searchText = '';
 
   constructor(private apiService: ApiService, private router: Router, private dialog: MatDialog) { }
