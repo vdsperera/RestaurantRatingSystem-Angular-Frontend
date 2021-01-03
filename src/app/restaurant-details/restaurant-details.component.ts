@@ -47,7 +47,7 @@ export class RestaurantDetailsComponent implements OnInit {
   private rating_service_star;
   private rating_service_checked_star;
 
-  private restaurant_dishes;
+  public restaurant_dishes;
   public restaurant;
   private body_string;
 
