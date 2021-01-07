@@ -19,7 +19,8 @@ import { MatTableDataSource } from '@angular/material/table';
 export class RestaurantListComponent implements OnInit {
   @ViewChild('secondDialog') secondDialog: TemplateRef<any>;
   // restaurants$: Observable<Restaurant[]>;
-  restaurants: Restaurant;
+  public restaurants;
+  public p;
   rests: any;
   public system_dishes;
   searchText = '';
