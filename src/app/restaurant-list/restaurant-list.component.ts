@@ -58,8 +58,8 @@ export class RestaurantListComponent implements OnInit {
          // // this.rests.sort(function(a, b){return a.restaurant_id - b.restaurant_id});
          // this.restaurants.sort(function(a, b){return b.overall_rating - a.overall_rating});
 
-         console.log(this.restaurants)
-         console.log('end component console restaurants')
+         // console.log(this.restaurants)
+         // console.log('end component console restaurants')
       });
       // console.log('start component console')
       // console.log(this.rests)
@@ -88,7 +88,7 @@ export class RestaurantListComponent implements OnInit {
        // // this.rests.sort(function(a, b){return a.restaurant_id - b.restaurant_id});
        // this.restaurants.sort(function(a, b){return b.overall_rating - a.overall_rating});
 
-       console.log(this.restaurants)
+       // console.log(this.restaurants)
        console.log('end component console restaurant dish')
     });    
   }
