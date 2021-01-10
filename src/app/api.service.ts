@@ -48,7 +48,18 @@ export class ApiService {
         return this.http.get<Restaurant[]>(`${this.API_URL}/restaurants/${restaurant_id}`)
     if(this.type == 1)
         // return this.http.get<Restaurant[]>(`${this.API_URL}/restaurants/${restaurant_id}`)
-        return this.http.get<Restaurant[]>(`/assets/sample_responses/get_restaurant_list/restaurant_list.json`);
+        if(restaurant_id==22)
+          return this.http.get<Restaurant[]>(`/assets/sample_responses/get_restaurant_n/get_restaurant_22.json`);
+
+        if(restaurant_id==23)
+          return this.http.get<Restaurant[]>(`/assets/sample_responses/get_restaurant_n/get_restaurant_23.json`);
+
+        if(restaurant_id==1)
+          return this.http.get<Restaurant[]>(`/assets/sample_responses/get_restaurant_n/get_restaurant_1.json`);
+
+        if(restaurant_id==92)
+          return this.http.get<Restaurant[]>(`/assets/sample_responses/get_restaurant_n/get_restaurant_92.json`);
+
   }
   
   // test
@@ -102,6 +113,7 @@ export class ApiService {
     //    // console.log(data)
     //    // console.log('end api service console')
     // });
+    // console.log('rest id', restaurant_id)
     if(this.type == 0)
         return this.http.get<any[]>(`${this.API_URL}/ratings/dishes/list?restid=${restaurant_id}`)
     if(this.type == 1)
@@ -109,6 +121,9 @@ export class ApiService {
           return this.http.get<Restaurant[]>(`/assets/sample_responses/get_dish_list_for_restaurant_n/get_dish_list_for_restaurant_22.json`);
       if(restaurant_id==23)
           return this.http.get<Restaurant[]>(`/assets/sample_responses/get_dish_list_for_restaurant_n/get_dish_list_for_restaurant_23.json`);
+      if(restaurant_id==1)
+          console.log('here is 1')
+          return this.http.get<Restaurant[]>(`/assets/sample_responses/get_dish_list_for_restaurant_n/get_dish_list_for_restaurant_1.json`);    
 
   }
 
