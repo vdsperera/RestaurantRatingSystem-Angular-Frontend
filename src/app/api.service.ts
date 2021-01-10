@@ -16,7 +16,7 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  public get_restaurants(): Observable<Restaurant[]> {
+  public get_restaurants(): Observable<any[]> {
     // console.log(this.http.get<Restaurant>(`${this.API_URL}/restaurants/list`))
     // console.log('start api service')
     // this.http.get<Restaurant[]>(`${this.API_URL}/restaurants/list`)
@@ -28,9 +28,9 @@ export class ApiService {
     // console.log('end api service')
     // return this.http.get<Restaurant[]>(`${this.API_URL}/restaurants/list`)
     if(this.type == 0)
-        return this.http.get<Restaurant[]>(`${this.API_URL}/restaurants/list`)
+        return this.http.get<any[]>(`${this.API_URL}/restaurants/list`)
     if(this.type == 1)
-        return this.http.get<Restaurant[]>(`/assets/sample_responses/get_restaurant_list/restaurant_list.json`);
+        return this.http.get<any[]>(`/assets/sample_responses/get_restaurant_list/restaurant_list.json`);
   }
 
   public get_restaurant(restaurant_id): Observable<Restaurant[]> {
