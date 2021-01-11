@@ -4,12 +4,14 @@ import { RegisterRestaurantComponent } from './register-restaurant/register-rest
 import { RestaurantListComponent } from './restaurant-list/restaurant-list.component';
 import { RestaurantDetailsComponent } from './restaurant-details/restaurant-details.component';
 import { ContributorsComponent } from './contributors/contributors.component'
+import { LoginComponent } from './login/login.component'
 
 const routes: Routes = [
   {path: '', component: RestaurantListComponent},
   {path: 'registerrestaurant', component: RegisterRestaurantComponent},
   {path: 'restaurants/:id', component: RestaurantDetailsComponent},
-  {path: 'contributors', component: ContributorsComponent}
+  {path: 'contributors', component: ContributorsComponent},
+  {path: 'login', component: LoginComponent},
 ];
 
 @NgModule({
