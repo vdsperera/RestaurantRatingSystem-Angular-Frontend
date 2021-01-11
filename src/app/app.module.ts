@@ -34,6 +34,8 @@ import { IntercepterService } from './services/intercepter.service';
 import { ModalModule } from './_modal';
 import { ContributorsComponent } from './contributors/contributors.component'
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './login/login.component';
+import { UserService } from './services/user.service'; 
 
 @NgModule({
   declarations: [
@@ -45,6 +47,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     StarRatingComponent,
     FilterPipe,
     ContributorsComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -82,7 +85,8 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
   {
       provide: HTTP_INTERCEPTORS,
       useClass: IntercepterService,
-      multi: true}
+      multi: true},
+      UserService
   ],
   bootstrap: [AppComponent]
 })
