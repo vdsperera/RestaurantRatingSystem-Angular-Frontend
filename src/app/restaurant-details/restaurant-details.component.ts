@@ -131,8 +131,10 @@ export class RestaurantDetailsComponent implements OnInit {
         })
     )
     .subscribe(
-      resp => {window.alert("Added Successfully")
+      resp => {
+      window.alert("Added Successfully")
       this.get_restaurant(this.route.snapshot.paramMap.get('id'))
+      this.get_dish_rating_list(this.route.snapshot.paramMap.get('id'))
     },
       err => window.alert(this.body_string)
     );
