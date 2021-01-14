@@ -74,37 +74,45 @@
 				<span class="rate">Overall Rating</span>
 				   <span class="tst">
 						<span *ngFor="let item of overall_checked_star_array()"><span class="fa fa-star checked"></span></span>
-						<span *ngFor="let item of overall_star_array()"><span class="fa fa-star"></span></span>				   	
+						<span *ngFor="let item of overall_star_array()"><span class="fa fa-star"></span></span>
+						{{restaurant.overall_rating | number : '.1-1'}}				   	
 				   </span><br>
 				<span class="rate">Dish Rating</span>
 				   <span class="tst">
 						<span *ngFor="let item of rating_dish_checked_star_array()"><span class="fa fa-star checked"></span></span>
 						<span *ngFor="let item of rating_dish_star_array()"><span class="fa fa-star"></span></span>	
+						{{restaurant.dish_rating | number : '.1-1'}}
 				   </span><br>
 				<span class="rate">Price Rating</span>
 				   <span class="tst">
 						<span *ngFor="let item of rating_price_checked_star_array()"><span class="fa fa-star checked"></span></span>
 						<span *ngFor="let item of rating_price_star_array()"><span class="fa fa-star"></span></span>	
+						{{restaurant.price_rating | number : '.1-1'}}
 				   </span><br>
 				<span class="rate">Service Rating</span>
 				   <span class="tst">
 						<span *ngFor="let item of rating_service_checked_star_array()"><span class="fa fa-star checked"></span></span>
-						<span *ngFor="let item of rating_service_star_array()"><span class="fa fa-star"></span></span>				   	
-				   </span><br>
+						<span *ngFor="let item of rating_service_star_array()"><span class="fa fa-star"></span></span>
+						{{restaurant.service_rating | number : '.1-1'}}				   	
+				   </span><br><br>
+				<label>Dish Ratings</label><br><br>
+				<div>
+					<ng-container *ngFor="let item of dish_rating_list">
+						{{set_star_rating(item.overall_rating)}}
+						{{item.dish_name}}
+						<span *ngFor="let item of checked_star_array()"><span class="fa fa-star checked"></span></span>
+						<span *ngFor="let item of star_array()"><span class="fa fa-star"></span></span>
+						{{item.overall_rating | number : '.1-1'}}
+						<br>
+					</ng-container>
+				</div>
 			</div>
 			<div id="r2c2" class="box">
 				<label>Dishes</label><br><br>
 				<div>
-					<ul style="list-style-type:none;">
-					<ng-container *ngFor="let item of dish_rating_list">
-						{{set_star_rating(item.overall_rating)}}
-						<li>{{item.dish_name}}
-						<span *ngFor="let item of checked_star_array()"><span class="fa fa-star checked"></span></span>
-						<span *ngFor="let item of star_array()"><span class="fa fa-star"></span></span>
-						{{item.overall_rating}}
-						</li>
+					<ng-container *ngFor="let item of restaurant_dishes">
+						<label>{{item.dish_name}}</label><br>
 					</ng-container>
-					</ul>
 				</div>
 			</div>
 			<div id="r3c1" class="box">
@@ -125,7 +133,7 @@
 											<span class="cs" *ngFor="let item of star_array()"><span class="fa fa-star"></span></span>	
 										</span>
 									<span class="rating-value">
-										{{item.overall_rating}}
+										{{item.overall_rating | number : '.1-1'}}
 									</span>
 									
 									</span>
