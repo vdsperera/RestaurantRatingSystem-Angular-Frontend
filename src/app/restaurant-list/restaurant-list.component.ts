@@ -120,7 +120,7 @@ export class RestaurantListComponent implements OnInit {
   public ar
   public rn
 
-  public questioner(x) {
+  public overall_rating(x) {
     this.ar =  Array(Math.round(x));
     this.rn = Math.floor(x)
     // console.log(this.rn)
