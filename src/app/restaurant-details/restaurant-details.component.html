@@ -94,7 +94,9 @@
 						<span *ngFor="let item of rating_service_checked_star_array()"><span class="fa fa-star checked"></span></span>
 						<span *ngFor="let item of rating_service_star_array()"><span class="fa fa-star"></span></span>
 						{{restaurant.service_rating | number : '.1-1'}}				   	
-				   </span><br><br>
+				   </span><br>
+			</div>
+			<div id="r2c2" class="box">
 				<label>Dish Ratings</label><br><br>
 				<div>
 					<ng-container *ngFor="let item of dish_rating_list">
@@ -104,14 +106,6 @@
 						<span *ngFor="let item of star_array()"><span class="fa fa-star"></span></span>
 						{{item.overall_rating | number : '.1-1'}}
 						<br>
-					</ng-container>
-				</div>
-			</div>
-			<div id="r2c2" class="box">
-				<label>Dishes</label><br><br>
-				<div>
-					<ng-container *ngFor="let item of restaurant_dishes">
-						<label>{{item.dish_name}}</label><br>
 					</ng-container>
 				</div>
 			</div>
