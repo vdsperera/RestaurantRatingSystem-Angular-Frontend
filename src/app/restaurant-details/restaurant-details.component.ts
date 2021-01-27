@@ -21,6 +21,7 @@ import * as olProj from 'ol/proj';
 import * as olControl from 'ol/control'
 import TileLayer from 'ol/layer/Tile';
 import * as olCoordinate from 'ol/coordinate';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-restaurant-details',
@@ -50,13 +51,15 @@ export class RestaurantDetailsComponent implements OnInit {
   public restaurant_dishes;
   public restaurant;
   private body_string;
+  public usr;
 
   mp: Map;
   
 
   constructor(private route: ActivatedRoute,
     private api_service: ApiService,
-    private modal_service: ModalService) { }
+    private modal_service: ModalService,
+    public user_service: UserService) { }
 
   ngOnInit(): void {
     this.get_dish_rating_list(this.route.snapshot.paramMap.get('id'))
@@ -276,5 +279,11 @@ export class RestaurantDetailsComponent implements OnInit {
       });
       this.mp.addLayer(vectorLayer);
     }
+
+  show_username(){
+    console.log('clicked')
+    console.log(this.user_service.token)
+    this.usr = this.user_service.token
+  }
 
 }
