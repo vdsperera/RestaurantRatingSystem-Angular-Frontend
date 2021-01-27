@@ -36,6 +36,7 @@ import { ContributorsComponent } from './contributors/contributors.component'
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { UserService } from './services/user.service'; 
+import { CookieService } from 'ngx-cookie-service';
 
 @NgModule({
   declarations: [
@@ -82,11 +83,13 @@ import { UserService } from './services/user.service';
 
   ],
   providers: [
-  {
+    {
       provide: HTTP_INTERCEPTORS,
       useClass: IntercepterService,
-      multi: true},
-      UserService
+      multi: true
+    },
+    UserService,
+    CookieService,
   ],
   bootstrap: [AppComponent]
 })
