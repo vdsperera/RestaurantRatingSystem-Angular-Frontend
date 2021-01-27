@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CookieService } from 'ngx-cookie-service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +11,10 @@ export class UserService {
   public token_expires: Date;
   public username: string
   public errors: any = [];
+  public cookie_value: string;
   API_URL = 'http://127.0.0.1:8000';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private cookie_service: CookieService) {
     this.httpOptions = {
       headers: new HttpHeaders({
       	'Content-Type': 'application/json'
@@ -62,5 +64,14 @@ export class UserService {
     const token_decoded = JSON.parse(window.atob(token_parts[1]));
     this.token_expires = new Date(token_decoded.exp * 1000);
     this.username = token_decoded.username;
+    this.cookie_service.set('username', this.username)
+    this.cookie_service.set('token', this.token)
+    this.cookie_value = this.cookie_service.get('token')
+  }
+
+  public get_token()
+  {
+    this.cookie_value = this.cookie_service.get('token')
+    return this.cookie_value
   }
 }
