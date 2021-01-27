@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Restaurant } from './restaurant';
-import { DishRating } from './dish_rating'
+import { Restaurant } from '../interfaces/restaurant';
+import { DishRating } from '../interfaces/dish_rating'
 import { map, catchError } from 'rxjs/operators'; 
-import { UserService } from './services/user.service'
+import { UserService } from './user.service'
 
 
 @Injectable({

@@ -3,10 +3,10 @@ import { MatDialog } from '@angular/material/dialog';
 import { Observable } from 'rxjs'
 import { Router } from '@angular/router'
 
-import { ApiService } from '../api.service' 
-import { Restaurant } from '../restaurant';
+import { ApiService } from '../../services/api.service' 
+import { Restaurant } from '../../interfaces/restaurant';
 import { map } from 'rxjs/operators'; 
-import { FilterPipe } from '../pipes/filter.pipe'
+import { FilterPipe } from '../../pipes/filter.pipe'
 
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';

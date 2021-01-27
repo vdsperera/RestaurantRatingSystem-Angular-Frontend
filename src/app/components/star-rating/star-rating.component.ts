@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Rating } from '../models/rating';
+import { Rating } from '../../models/rating';
 
 @Component({
   selector: 'app-star-rating',

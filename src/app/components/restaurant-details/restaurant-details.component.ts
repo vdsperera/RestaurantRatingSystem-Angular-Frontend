@@ -1,11 +1,11 @@
 import { Component, OnInit, Input, Output, EventEmitter, ViewEncapsulation } from '@angular/core';
-import { Rating } from '../models/rating';
+import { Rating } from '../../models/rating';
 import { ActivatedRoute } from '@angular/router';
-import { ApiService } from '../api.service' 
+import { ApiService } from '../../services/api.service' 
 import { map,catchError } from 'rxjs/operators'; 
-import { DishRating } from '../dish_rating';
+import { DishRating } from '../../interfaces/dish_rating';
 import { Observable, throwError } from 'rxjs';
-import { ModalService } from '../_modal';
+import { ModalService } from '../../_modal';
 import Map from 'ol/Map';
 import View from 'ol/View';
 import VectorLayer from 'ol/layer/Vector';
@@ -21,7 +21,7 @@ import * as olProj from 'ol/proj';
 import * as olControl from 'ol/control'
 import TileLayer from 'ol/layer/Tile';
 import * as olCoordinate from 'ol/coordinate';
-import { UserService } from '../services/user.service';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-restaurant-details',

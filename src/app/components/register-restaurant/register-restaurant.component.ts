@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ApiService } from '../api.service' 
-import { Restaurant } from '../models/restaurant';
+import { ApiService } from '../../services/api.service' 
+import { Restaurant } from '../../models/restaurant';
 import { Observable } from 'rxjs';
 import { from } from 'rxjs';
 import { map,catchError } from 'rxjs/operators'; 
