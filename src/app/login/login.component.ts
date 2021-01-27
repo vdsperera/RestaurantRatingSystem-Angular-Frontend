@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
   }
 
   show_username(){
-  	this.usr = this.user_service.token
+  	this.usr = this.user_service.get_token()
   }
 
 }
