@@ -4,6 +4,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Restaurant } from './restaurant';
 import { DishRating } from './dish_rating'
 import { map, catchError } from 'rxjs/operators'; 
+import { UserService } from './services/user.service'
 
 
 @Injectable({
@@ -14,7 +15,7 @@ export class ApiService {
   API_URL = 'http://127.0.0.1:8000';
   type = 0
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private user_service: UserService) { }
 
   public get_restaurants(): Observable<any[]> {
     // console.log(this.http.get<Restaurant>(`${this.API_URL}/restaurants/list`))
@@ -101,7 +102,14 @@ export class ApiService {
 
   public add_rating(data):Observable<any>
   {
-    return this.http.post(`${this.API_URL}/ratings/`, data)
+    let http_options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': 'JWT ' + this.user_service.get_token()
+      })
+    };
+    console.log(this.user_service.get_token())
+    return this.http.post(`${this.API_URL}/ratings/`, data, http_options)
     // .pipe( catchError( (error: Response) => throwError(`VDS_Network Error: ${error.error.detail} ${error.status}`)  ) );
   }
 
