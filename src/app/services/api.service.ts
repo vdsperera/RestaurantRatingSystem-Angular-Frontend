@@ -109,7 +109,7 @@ export class ApiService {
       })
     };
     console.log(this.user_service.get_token())
-    return this.http.post(`${this.API_URL}/ratings/`, data, http_options)
+    return this.http.post(`${this.API_URL}/ratings/`, data)
     // .pipe( catchError( (error: Response) => throwError(`VDS_Network Error: ${error.error.detail} ${error.status}`)  ) );
   }
 
