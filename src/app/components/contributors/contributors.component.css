@@ -1,0 +1,66 @@
+.wrapper
+{
+	display: grid;
+	padding: 5px;
+	border : 2px solid black;
+/*	grid-template-columns: 2fr 1fr;
+	grid-auto-rows: minmax(auto, auto);*/
+	grid-template-areas: 
+	'filter-wrapper'
+    'contributors';
+}
+
+.box
+{
+	height: 300px;
+	margin: 5px;
+	/*border: 2px solid black*/;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+	border-radius: 5px;
+	padding: 5px;
+}
+
+#filter-wrapper
+{
+	grid-area: filter-wrapper;
+	height: 100px;
+	display: grid;
+	grid-template-rows: 1fr 1fr 1fr;
+}
+
+#dates-wrapper
+{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+#months-wrapper
+{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+#top-wrapper
+{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+#contributors
+{
+	grid-area: contributors;
+	/*background-color: red;*/
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+/*	border-top: 1px solid black;
+	border-right: 1px solid black;*/
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+#contributors > span
+{
+/*	border-bottom: 1px solid black;
+	border-left: 1px solid black;*/
+	border-top: 1px solid #e0e0e0;
+	padding: 8px 4px;
+}

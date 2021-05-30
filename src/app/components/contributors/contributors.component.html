@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title></title>
+</head>
+	<body>
+		<label>Top Contributorss</label> 
+		<div class="wrapper">
+			<div id="filter-wrapper" class="box">
+				<span id="dates-wrapper">
+					<label>From Date</label>
+					<input type="date" id="from_date" name="from_date">
+					<label>To Date</label>
+					<input type="date" id="to_date" name="to_date">
+					<button id="find" name="find" (click)=find()>Find</button>
+				</span>
+				<span id="months-wrapper">
+					<button id="this_month" name="this_month" (click)=this_month()>This Month</button>
+					<button id="previous_month" name="previous_month" (click)=previous_month()>Previous Month</button>
+					<button id="month_all" name="month_all" (click)=month_all()>All</button>
+				</span>
+				<span id="top-wrapper">
+					<button>Top 10</button>
+					<button>Top 20</button>
+					<button>All</button>
+				</span>
+
+            </div>
+			<div id="contributors" class="box">
+				<span>Name</span>
+				<span>Points</span>
+			    <ng-container *ngFor="let item of contributor_list.contributors">
+					<span>{{item.user}}</span>
+					<span>{{item.total_points}}</span>
+			    </ng-container>  
+			</div>
+		</div>
+	</body>
+</html>
